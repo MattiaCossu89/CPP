@@ -18,19 +18,41 @@
 class Contact
 {
 	private:
-		std::string f_name;
-		std::string l_name;
-		std::string nickname;
-		std::string login;
-		std::string p_address;
-		std::string e_address;
-		std::string phone;
-		std::string birthday;
-		std::string favorite_meal;
-		std::string underwear_color;
-		std::string darkest_secret.
+		std::string	f_name;
+		std::string	l_name;
+		std::string	nickname;
+		std::string	login;
+		std::string	p_address;
+		std::string	e_address;
+		std::string	phone;
+		std::string	birthday;
+		std::string	favorite_meal;
+		std::string	underwear_color;
+		std::string	darkest_secret;
 	public:
-
+		Contact(void);
+		void		setFirstName(std::string first_name);
+		void		setLastName(std::string last_name);
+		void		setNickName(std::string nickname);
+		void		setLogin(std::string login);
+		void		setPostAddress(std::string post_address);
+		void		setEmailAddress(std::string email_address);
+		void		setPhone(std::string phone);
+		void		setBirthday(std::string birthday);
+		void		setFavoriteMeal(std::string favorite_meal);
+		void		setUnderwearColor(std::string underwear_color);
+		void		setDarkestSecret(std::string darkest_secret);
+		std::string	getFirstName(void);
+		std::string	getLastName(void);
+		std::string	getNickName(void);
+		std::string	getLogin(void);
+		std::string	getPostAddress(void);
+		std::string	getEmailAddress(void);
+		std::string	getPhone(void);
+		std::string	getBirthday(void);
+		std::string	getFavoriteMeal(void);
+		std::string	getUnderwearColor(void);
+		std::string	getDarkestSecret(void);
 };
 
 #endif
