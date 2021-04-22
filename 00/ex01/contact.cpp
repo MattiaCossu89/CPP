@@ -70,6 +70,73 @@ void		Contact::setDarkestSecret(std::string darkest_secret)
 	this->darkest_secret = darkest_secret;
 };
 
+void		Contact::setFirstNameSTDIN(void)
+{
+
+	std::cout << "Insert First Name:" << std::endl;
+	std::getline(std::cin, this->f_name);
+};
+
+void		Contact::setLastNameSTDIN(void)
+{
+	std::cout << "Insert Last Name:" << std::endl;
+	std::getline(std::cin, this->l_name);
+};
+
+void		Contact::setNickNameSTDIN(void)
+{
+	std::cout << "Insert Nickname:" << std::endl;
+	std::getline(std::cin, this->nickname);
+};
+
+void		Contact::setLoginSTDIN(void)
+{
+	std::cout << "Insert Login:" << std::endl;
+	std::getline(std::cin, this->login);
+};
+
+void		Contact::setPostAddressSTDIN(void)
+{
+	std::cout << "Insert Postal Address:" << std::endl;
+	std::getline(std::cin, this->p_address);
+};
+
+void		Contact::setEmailAddressSTDIN(void)
+{
+	std::cout << "Insert e-mail Address:" << std::endl;
+	std::getline(std::cin, this->e_address);
+};
+
+void		Contact::setPhoneSTDIN(void)
+{
+	std::cout << "Insert Phone Number:" << std::endl;
+	std::getline(std::cin, this->phone);
+};
+
+void		Contact::setBirthdaySTDIN(void)
+{
+	std::cout << "Insert Birthday:" << std::endl;
+	std::getline(std::cin, this->birthday);
+};
+
+void		Contact::setFavoriteMealSTDIN(void)
+{
+	std::cout << "Insert Favourite Meal:" << std::endl;
+	std::getline(std::cin, this->favorite_meal);
+};
+
+void		Contact::setUnderwearColorSTDIN(void)
+{
+	std::cout << "Insert Underwear Color:" << std::endl;
+	std::getline(std::cin, this->underwear_color);
+};
+
+void		Contact::setDarkestSecretSTDIN(void)
+{
+	std::cout << "Insert Darkest Secret:" << std::endl;
+	std::getline(std::cin, this->darkest_secret);
+};
+
 std::string	Contact::getFirstName(void)
 {
 	return (this->f_name);
@@ -125,3 +192,68 @@ std::string	Contact::getDarkestSecret(void)
 	return (this->darkest_secret);
 };
 
+void	Contact::getFirstNameSTDOUT(void)
+{
+	std::cout << "First Name:" << std::endl;
+	std::cout << (this->f_name) << std::endl;
+};
+
+void	Contact::getLastNameSTDOUT(void)
+{
+	std::cout << "Last Name:" << std::endl;
+	std::cout << (this->l_name) << std::endl;
+};
+
+void	Contact::getNickNameSTDOUT(void)
+{
+	std::cout << "Nickname:" << std::endl;
+	std::cout << (this->nickname) << std::endl;
+};
+
+void	Contact::getLoginSTDOUT(void)
+{
+	std::cout << "Login:" << std::endl;
+	std::cout << (this->login) << std::endl;
+};
+
+void	Contact::getPostAddressSTDOUT(void)
+{
+	std::cout << "Postal Address:" << std::endl;
+	std::cout << (this->p_address) << std::endl;
+};
+
+void	Contact::getEmailAddressSTDOUT(void)
+{
+	std::cout << "e-mail:" << std::endl;
+	std::cout << (this->e_address) << std::endl;
+};
+
+void	Contact::getPhoneSTDOUT(void)
+{
+	std::cout << "Phone:" << std::endl;
+	std::cout << (this->phone) << std::endl;
+};
+
+void	Contact::getBirthdaySTDOUT(void)
+{
+	std::cout << "Birthday:" << std::endl;
+	std::cout << (this->birthday) << std::endl;
+};
+
+void	Contact::getFavoriteMealSTDOUT(void)
+{
+	std::cout << "Favourite Meal:" << std::endl;
+	std::cout << (this->favorite_meal) << std::endl;
+};
+
+void	Contact::getUnderwearColorSTDOUT(void)
+{
+	std::cout << "Underwear Color:" << std::endl;
+	std::cout << (this->underwear_color) << std::endl;
+};
+
+void	Contact::getDarkestSecretSTDOUT(void)
+{
+	std::cout << "Darkest Secret:" << std::endl;
+	std::cout << (this->darkest_secret) << std::endl;
+};

@@ -13,16 +13,29 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+# include <iostream>
+# include <iomanip>
 # include "contact.hpp"
 
 # define MAX_CONTACTS 8
+# define MAX_LEN 9
+
+enum Position{ LEFT, CENTRE, RIGHT };
 
 class PhoneBook
 {
 	private:
-		Contact book[MAX_CONTACTS];
-	public:
+		int		last_index;
+		Contact	p_book[MAX_CONTACTS];
 
+		void	addContact(void);
+		void	printAll(void);
+		void	printContact(int index);
+		void	printContactInLine(int index);
+	public:
+		PhoneBook(void);
+		void	addRequest(void);
+		void	searchRequest(void);
 };
 
 #endif
