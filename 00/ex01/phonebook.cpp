@@ -88,9 +88,9 @@ void	PhoneBook::addRequest(void)
 		this->last_index--;
 		return ;
 	}
-	std::cout << this->p_book[this->last_index].getFirstName() << " ";
-	std::cout << this->p_book[this->last_index].getLastName() << " " << std::endl;
-	std::cout << "\033[32mAdded to your beautiful PhoneBook\033[0m" << std::endl;
+	std::cout << "\033[33m" << this->p_book[this->last_index].getFirstName() << " ";
+	std::cout << this->p_book[this->last_index].getLastName() << " ";
+	std::cout << "\033[32madded to your beautiful PhoneBook\033[0m" << std::endl;
 };
 
 void	PhoneBook::printContactInLine(int index)

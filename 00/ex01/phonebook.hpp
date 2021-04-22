@@ -20,8 +20,6 @@
 # define MAX_CONTACTS 8
 # define MAX_LEN 9
 
-enum Position{ LEFT, CENTRE, RIGHT };
-
 class PhoneBook
 {
 	private:

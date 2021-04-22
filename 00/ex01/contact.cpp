@@ -1,5 +1,20 @@
 #include "contact.hpp"
 
+static void	print(Position pos, std::string s, int linelength)
+{
+	int spaces = 0;
+	switch( pos )
+	{
+		case CENTRE: spaces = (linelength - s.size() ) / 2; break;
+		case RIGHT : spaces =  linelength - s.size(); break;
+		case LEFT  : spaces =  linelength - s.size(); break;
+
+	}
+	if ( spaces > 0 && (pos == RIGHT || pos == CENTRE)) std::cout << std::string(spaces, ' ');
+	std::cout << s;
+	if ( spaces > 0 && (pos == LEFT || pos == CENTRE)) std::cout << std::string(spaces - (pos == CENTRE ? s.size() % 2 : 0), ' ');
+}
+
 Contact::Contact(void)
 {
 	this->f_name = "";
@@ -17,16 +32,31 @@ Contact::Contact(void)
 
 void		Contact::setFirstName(std::string first_name)
 {
+	for (size_t i = 0; i < first_name.size(); i++)
+	{
+		if (first_name[i] == '\t')
+			first_name[i] = ' ';
+	}
 	this->f_name = first_name;
 };
 
 void		Contact::setLastName(std::string last_name)
 {
+	for (size_t i = 0; i < last_name.size(); i++)
+	{
+		if (last_name[i] == '\t')
+			last_name[i] = ' ';
+	}
 	this->l_name = last_name;
 };
 
 void		Contact::setNickName(std::string nickname)
 {
+	for (size_t i = 0; i < nickname.size(); i++)
+	{
+		if (nickname[i] == '\t')
+			nickname[i] = ' ';
+	}
 	this->nickname = nickname;
 };
 
@@ -72,68 +102,73 @@ void		Contact::setDarkestSecret(std::string darkest_secret)
 
 void		Contact::setFirstNameSTDIN(void)
 {
-
-	std::cout << "Insert First Name:" << std::endl;
-	std::getline(std::cin, this->f_name);
+	std::string temp;
+	print(LEFT, "\033[33mInsert First Name:\033[0m ", 33);
+	std::getline(std::cin, temp);
+	this->setFirstName(temp);
 };
 
 void		Contact::setLastNameSTDIN(void)
 {
-	std::cout << "Insert Last Name:" << std::endl;
-	std::getline(std::cin, this->l_name);
+	std::string temp;
+	print(LEFT, "\033[33mInsert Last Name:\033[0m ", 33);
+	std::getline(std::cin, temp);
+	this->setLastName(temp);
 };
 
 void		Contact::setNickNameSTDIN(void)
 {
-	std::cout << "Insert Nickname:" << std::endl;
-	std::getline(std::cin, this->nickname);
+	std::string temp;
+	print(LEFT, "\033[33mInsert Nickname:\033[0m ", 33);
+	std::getline(std::cin, temp);
+	this->setNickName(temp);
 };
 
 void		Contact::setLoginSTDIN(void)
 {
-	std::cout << "Insert Login:" << std::endl;
+	print(LEFT, "\033[33mInsert Login:\033[0m ", 33);
 	std::getline(std::cin, this->login);
 };
 
 void		Contact::setPostAddressSTDIN(void)
 {
-	std::cout << "Insert Postal Address:" << std::endl;
+	print(LEFT, "\033[33mInsert Postal Address:\033[0m ", 33);
 	std::getline(std::cin, this->p_address);
 };
 
 void		Contact::setEmailAddressSTDIN(void)
 {
-	std::cout << "Insert e-mail Address:" << std::endl;
+	print(LEFT, "\033[33mInsert e-mail Address:\033[0m ", 33);
 	std::getline(std::cin, this->e_address);
 };
 
 void		Contact::setPhoneSTDIN(void)
 {
-	std::cout << "Insert Phone Number:" << std::endl;
+	print(LEFT, "\033[33mInsert Phone Number:\033[0m ", 33);
 	std::getline(std::cin, this->phone);
 };
 
 void		Contact::setBirthdaySTDIN(void)
 {
-	std::cout << "Insert Birthday:" << std::endl;
+	print(LEFT, "\033[33mInsert Birthday:\033[0m ", 33);
 	std::getline(std::cin, this->birthday);
 };
 
 void		Contact::setFavoriteMealSTDIN(void)
 {
-	std::cout << "Insert Favourite Meal:" << std::endl;
+	print(LEFT, "\033[33mInsert Favourite Meal:\033[0m ", 33);
 	std::getline(std::cin, this->favorite_meal);
 };
 
 void		Contact::setUnderwearColorSTDIN(void)
 {
-	std::cout << "Insert Underwear Color:" << std::endl;
+	print(LEFT, "\033[33mInsert Underwear Color:\033[0m ", 33);
 	std::getline(std::cin, this->underwear_color);
 };
 
 void		Contact::setDarkestSecretSTDIN(void)
 {
-	std::cout << "Insert Darkest Secret:" << std::endl;
+	print(LEFT, "\033[33mInsert Darkest Secret:\033[0m ", 33);
 	std::getline(std::cin, this->darkest_secret);
 };
 
@@ -194,66 +229,66 @@ std::string	Contact::getDarkestSecret(void)
 
 void	Contact::getFirstNameSTDOUT(void)
 {
-	std::cout << "First Name:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mFirst Name:\033[0m";
 	std::cout << (this->f_name) << std::endl;
 };
 
 void	Contact::getLastNameSTDOUT(void)
 {
-	std::cout << "Last Name:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mLast Name:\033[0m";
 	std::cout << (this->l_name) << std::endl;
 };
 
 void	Contact::getNickNameSTDOUT(void)
 {
-	std::cout << "Nickname:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mNickname:\033[0m";
 	std::cout << (this->nickname) << std::endl;
 };
 
 void	Contact::getLoginSTDOUT(void)
 {
-	std::cout << "Login:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mLogin:\033[0m";
 	std::cout << (this->login) << std::endl;
 };
 
 void	Contact::getPostAddressSTDOUT(void)
 {
-	std::cout << "Postal Address:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mPostal Address:\033[0m";
 	std::cout << (this->p_address) << std::endl;
 };
 
 void	Contact::getEmailAddressSTDOUT(void)
 {
-	std::cout << "e-mail:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33me-mail:\033[0m";
 	std::cout << (this->e_address) << std::endl;
 };
 
 void	Contact::getPhoneSTDOUT(void)
 {
-	std::cout << "Phone:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mPhone:\033[0m";
 	std::cout << (this->phone) << std::endl;
 };
 
 void	Contact::getBirthdaySTDOUT(void)
 {
-	std::cout << "Birthday:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mBirthday:\033[0m";
 	std::cout << (this->birthday) << std::endl;
 };
 
 void	Contact::getFavoriteMealSTDOUT(void)
 {
-	std::cout << "Favourite Meal:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mFavourite Meal:\033[0m";
 	std::cout << (this->favorite_meal) << std::endl;
 };
 
 void	Contact::getUnderwearColorSTDOUT(void)
 {
-	std::cout << "Underwear Color:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mUnderwear Color:\033[0m";
 	std::cout << (this->underwear_color) << std::endl;
 };
 
 void	Contact::getDarkestSecretSTDOUT(void)
 {
-	std::cout << "Darkest Secret:" << std::endl;
+	std::cout << std::setw(26) << std::left << "\033[33mDarkest Secret:\033[0m";
 	std::cout << (this->darkest_secret) << std::endl;
 };

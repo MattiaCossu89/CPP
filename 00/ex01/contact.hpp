@@ -15,6 +15,9 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
+
+enum Position{ LEFT, CENTRE, RIGHT };
 
 class Contact
 {
