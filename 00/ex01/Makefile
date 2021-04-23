@@ -13,6 +13,8 @@ NAME = phonebook
 %.o : %.cpp
 	$(CPP) $(FLAGS) -c $< -o $(<:.cpp=.o)
 
+all: $(NAME)
+
 $(NAME): $(OBJS)
 	$(CPP) $(OBJS) -o $(NAME)
 
@@ -21,3 +23,5 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+
+re: fclean all

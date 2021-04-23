@@ -6,12 +6,11 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 18:56:31 by mcossu            #+#    #+#             */
-/*   Updated: 2021/04/21 19:01:02 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/04/23 13:44:19 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#pragma once
 
 # include <string>
 # include <iostream>
@@ -80,5 +79,3 @@ class Contact
 		void		getUnderwearColorSTDOUT(void);
 		void		getDarkestSecretSTDOUT(void);
 };
-
-#endif
