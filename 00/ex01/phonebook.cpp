@@ -26,9 +26,9 @@ void	printLine(void)
 void	printHeader(void)
 {
 	printLine();
-	std::cout << "|";
+	std::cout << "|" << "\033[32m";
 	print(CENTRE, "INDEX", 11);
-	std::cout << "|";
+	std::cout << "\033[0m|";
 	print(CENTRE, "FIRST NAME", 11);
 	std::cout << "|";
 	print(CENTRE, "LAST NAME", 11);
@@ -123,7 +123,7 @@ void	PhoneBook::searchRequest(void)
 	this->printAll();
 	if (this->last_index < 0)
 	{
-		std::cout << "No Contacts :(" << std::endl;
+		std::cout << "No Contacts \U0001F9D0" << std::endl;
 		std::cout << "Use \033[32mADD\033[0m to create a new one" << std::endl;
 		return ;
 	}
