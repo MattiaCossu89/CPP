@@ -1,4 +1,5 @@
-SRCS = megaphone.cpp
+SRCS =	Replacer.cpp \
+		supersed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -6,7 +7,7 @@ CPP = clang++
 
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-NAME = megaphone
+NAME = supersed
 
 %.o : %.cpp
 	$(CPP) $(FLAGS) -c $< -o $(<:.cpp=.o)
@@ -18,6 +19,7 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -rf $(OBJS)
+	rm *.replace
 
 fclean: clean
 	rm -rf $(NAME)

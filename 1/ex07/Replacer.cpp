@@ -1,19 +1,10 @@
 #include "Replacer.hpp"
 
-
 void	Replacer::replace()
 {
-	std::string new_str;
-	std::string temp;
-	for (int i = 0; i < _str.length(); i++)
-	{
-		int j = 0;
-		for(; j < _s1.length() && _s1[j] == _str[i + j]; j++);
-		if (j == _s1.length())
-		{
-			new_str +=
-		}
-	}
+	size_t it;
+	while ((it = _str.find(_s1)) != std::string::npos)
+	_str.replace(it, _s1.length(), _s2);
 }
 Replacer::Replacer(const std::string &str, const std::string &s1, const std::string &s2) : _old_str(str), _str(str), _s1(s1), _s2(s2)
 {
@@ -21,9 +12,9 @@ Replacer::Replacer(const std::string &str, const std::string &s1, const std::str
 }
 std::string Replacer::getOldString()
 {
-
+	return (_old_str);
 }
 std::string Replacer::getReplacedString()
 {
-
+	return (_str);
 }
