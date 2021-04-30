@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 enum Type
 {
@@ -8,39 +9,19 @@ enum Type
 	Voodoo
 };
 
+std::string typeToString(Type type);
+
 class Zombie
 {
 	private:
 		Type type;
-
-	public
-		Type getType()
-		{
-			return this.type;
-		}
-
-	public
-		void setType(Type type)
-		{
-			this.type = type;
-		}
-
 		std::string name;
-
-	public
-		std::string getName()
-		{
-			return this.name;
-		}
-
-	public
-		void setName(std::string name)
-		{
-			this.name = name;
-		}
-
 	public:
 		Zombie();
 		~Zombie();
+		std::string getName();
+		void setName(std::string name);
+		Type getType();
+		void setType(Type type);
 		void announce();
 };
