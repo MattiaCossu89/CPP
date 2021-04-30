@@ -18,6 +18,8 @@ class Zombie
 		std::string name;
 	public:
 		Zombie();
+		Zombie(std::string name);
+		Zombie(std::string name, Type type);
 		~Zombie();
 		std::string getName();
 		void setName(std::string name);
