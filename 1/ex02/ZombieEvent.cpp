@@ -19,6 +19,7 @@ Zombie	*ZombieEvent::newZombie(std::string name)
 
 void	ZombieEvent::randomChump()
 {
+	srand(time(0));
 	Zombie z = Zombie();
 	z.setType(type);
 	z.setName(names[rand() % 10]);
