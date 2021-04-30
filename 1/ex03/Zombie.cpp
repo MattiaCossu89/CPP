@@ -2,20 +2,22 @@
 
 std::string typeToString(Type type)
 {
+	std::string stype;
 	switch (type)
 	{
 	case Generic:
-		std::cout << "Generic";
+		stype = "Generic";
 		break;
 	case Voodoo:
-		std::cout << "Voodoo";
+		stype = "Voodoo";
 		break;
 	case Runner:
-		std::cout << "Runner";
+		stype = "Runner";
 		break;
 	default:
 		break;
 	}
+	return (stype);
 }
 
 Zombie::Zombie() : name(""), type(Generic){};
