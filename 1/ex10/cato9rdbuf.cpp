@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <stdlib.h>
 
 int main(int ac, const char **av)
 {
@@ -17,7 +16,7 @@ int main(int ac, const char **av)
 			 std::cout << c;
 			 c = char(std::cin.get());
 		}
-		exit(0);
+		return (0);
 	}
 	for (int i = 1; i < ac; i++)
 	{
@@ -37,5 +36,5 @@ int main(int ac, const char **av)
 		}
 		in.close();
 	}
-	exit(0);
+	return (0);
 }

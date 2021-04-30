@@ -14,10 +14,9 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <stdlib.h>
+#include <ctime>
 #include <unistd.h>
-#include <time.h>
-#include <sys/time.h>
+#include <cstdlib>
 #define RUN_LENGTH 10
 
 class Pony
