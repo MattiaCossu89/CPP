@@ -48,7 +48,7 @@ void	ponyOnHeap(void)
 }
 
 Pony::Pony(void):
-name(""), speed(0) {};
+name(""), speed(0) {}
 
 Pony::~Pony(void)
 {
@@ -58,19 +58,19 @@ Pony::~Pony(void)
 void		Pony::setName(const std::string &name_)
 {
 	name = name_;
-};
+}
 void		Pony::setSpeed(float speed_)
 {
 	speed = speed_;
-};
+}
 std::string	Pony::getName(void)
 {
 	return (name);
-};
+}
 float		Pony::getSpeed(void)
 {
 	return (speed);
-};
+}
 void		Pony::run(void)
 {
 	for (int i = 0; i < RUN_LENGTH; i++)
@@ -82,4 +82,4 @@ void		Pony::run(void)
 	}
 	std::cout << "\033[2K\033[?25l";
 	std::cout << "\033[?25h\033[1A\033[0J" << std::endl;
-};
+}

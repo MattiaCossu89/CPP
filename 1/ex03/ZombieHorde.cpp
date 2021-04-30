@@ -15,13 +15,13 @@ ZombieHorde::ZombieHorde(int num)
 		zombies[i].setName(names[rand() % 20]);
 		zombies[i].setType((Type)(rand() % 3));
 	}
-};
+}
 ZombieHorde::~ZombieHorde()
 {
 	delete [] zombies;
-};
+}
 void	ZombieHorde::announce()
 {
 	for (int i = 0; i < N; i++)
 		zombies[i].announce();
-};
+}

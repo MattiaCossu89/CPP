@@ -20,16 +20,16 @@ std::string typeToString(Type type)
 	return (stype);
 }
 
-Zombie::Zombie() : name(""), type(Generic){};
+Zombie::Zombie() : name(""), type(Generic){}
 
-Zombie::Zombie(std::string name) : name(name), type(Generic){};
+Zombie::Zombie(std::string name) : name(name), type(Generic){}
 
-Zombie::Zombie(std::string name, Type type) : name(name), type(type){};
+Zombie::Zombie(std::string name, Type type) : name(name), type(type){}
 
 Zombie::~Zombie()
 {
 	std::cout << "<" << name << " (" << typeToString(type) << ")> " << "Aaaaarggg!! [Zombie is finally really died]" << std::endl;
-};
+}
 
 std::string Zombie::getName()
 {

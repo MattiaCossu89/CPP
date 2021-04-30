@@ -5,17 +5,17 @@ std::string ZombieEvent::names[10] = {"Mathijs", "Zenas", "Pirnal", "Famine", "B
 ZombieEvent::ZombieEvent()
 {
 	srand(time(0));
-};
+}
 
 void	ZombieEvent::setZombieType(Type type_)
 {
 	type = type_;
-};
+}
 
 Zombie	*ZombieEvent::newZombie(std::string name)
 {
 	return (new Zombie(name, type));
-};
+}
 
 void	ZombieEvent::randomChump()
 {
@@ -23,4 +23,4 @@ void	ZombieEvent::randomChump()
 	z.setType(type);
 	z.setName(names[rand() % 10]);
 	z.announce();
-};
+}
