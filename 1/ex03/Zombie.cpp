@@ -48,5 +48,5 @@ void Zombie::setType(Type type)
 
 void Zombie::announce()
 {
-	std::cout << "<" << name << " (" << typeToString(type) << ")>" << "Braiiiiiiinnnssss..." << std::endl;
+	std::cout << "<" << name << " (" << typeToString(type) << ")>" << " Braiiiiiiinnnssss..." << std::endl;
 }
