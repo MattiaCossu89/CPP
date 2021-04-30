@@ -4,7 +4,7 @@ void	Replacer::replace()
 {
 	size_t it;
 	while ((it = _str.find(_s1)) != std::string::npos)
-	_str.replace(it, _s1.length(), _s2);
+		_str.replace(it, _s1.length(), _s2);
 }
 Replacer::Replacer(const std::string &str, const std::string &s1, const std::string &s2) : _old_str(str), _str(str), _s1(s1), _s2(s2)
 {
