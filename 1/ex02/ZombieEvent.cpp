@@ -1,10 +1,15 @@
 #include "ZombieEvent.hpp"
 
-std::string names[10] = {"Mathijs", "Zenas", "Pirnal", "Famine", "Beasts", "Phedan", "Sword", "Pestilence", "Pantalaimon", "Mur"};
+std::string ZombieEvent::names[10] = {"Mathijs", "Zenas", "Pirnal", "Famine", "Beasts", "Phedan", "Sword", "Mexont", "Genar", "Mur"};
 
-void	ZombieEvent::setZombieType(Type type)
+ZombieEvent::ZombieEvent()
 {
-	type = type;
+	srand(time(0));
+};
+
+void	ZombieEvent::setZombieType(Type type_)
+{
+	type = type_;
 };
 
 Zombie	*ZombieEvent::newZombie(std::string name)
@@ -14,7 +19,6 @@ Zombie	*ZombieEvent::newZombie(std::string name)
 
 void	ZombieEvent::randomChump()
 {
-	srand(time(0));
 	Zombie z = Zombie();
 	z.setType(type);
 	z.setName(names[rand() % 10]);
