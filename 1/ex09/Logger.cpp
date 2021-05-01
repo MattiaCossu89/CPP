@@ -44,7 +44,7 @@ void		Logger::log(std::string const & dest, std::string const & message)
 	std::string type[2] = {"file File" + _filename, "stdout StandardOutput"};
 	fun met[2] = {&Logger::logToFile, &Logger::logToConsole};
 	for (int i = 0; i < 2; i++)
-		if (dest.find(type[i]) != std::string::npos || type[i].find(dest) != std::string::npos)
+		if (type[i].find(dest) != std::string::npos)
 			(this->*met[i])(message);
 }
 

@@ -20,7 +20,7 @@ void Human::action(std::string const & action_name, std::string const & target)
 	std::string name[3] = {"melee meleeAttack Melee MeleeAttack", "Ranged RangedAttack ranged rangedAttack", "intimidating shout Shout intimidatingShout"};
 
 	for (int i = 0; i < 3; i++)
-		if (action_name.find(name[i]) != std::string::npos || name[i].find(action_name) != std::string::npos)
+		if (name[i].find(action_name) != std::string::npos)
 			(this->*f_p[i])(target);
 
 }
