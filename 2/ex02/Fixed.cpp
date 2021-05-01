@@ -5,35 +5,29 @@ const int Fixed::Q = 8;
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
 	raw = 0;
 }
 Fixed::Fixed(const int num)
 {
-	std::cout << "Int constructor called" << std::endl;
 	raw = (num << Q);
 }
 
 Fixed::Fixed(const float num)
 {
-	std::cout << "Float constructor called" << std::endl;
 	raw = (round((num) * (1 << Q)));
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &original)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = original;
 }
 
 Fixed&	Fixed::operator=(const Fixed &original)
 {
-	std::cout << "Assignation operator called" << std::endl;
 	raw = original.raw;
 	return *this;
 }
@@ -82,7 +76,7 @@ const Fixed	Fixed::operator*(const Fixed &fx) const
 {
 	Fixed ret(0);
 	long int n = ((long int)(raw) * (long int)fx.raw);
-	n += (1 << Q);
+	// n += (1 << Q);
 	ret.setRawBits(n >> Q);
 	return (ret);
 }
@@ -91,13 +85,40 @@ const Fixed	Fixed::operator/(const Fixed &fx) const
 {
 	Fixed ret(0);
 	long int temp = (long int)raw << Q;
-	if ((temp >= 0 && fx.raw >= 0) || (temp < 0 && fx.raw < 0))
-		temp += fx.raw / 2;
-	else
-		temp -= fx.raw / 2;
+	// if ((temp >= 0 && fx.raw >= 0) || (temp < 0 && fx.raw < 0))
+	// 	temp += fx.raw / 2;
+	// else
+	// 	temp -= fx.raw / 2;
 	ret.setRawBits((temp / fx.raw));
 	return ret;
 }
+
+Fixed		Fixed::operator++(int)
+{
+	Fixed ret = *this;
+	raw++;
+	return (ret);
+}
+
+Fixed&		Fixed::operator++()
+{
+	raw++;
+	return (*this);
+}
+
+Fixed		Fixed::operator--(int)
+{
+	Fixed ret = *this;
+	raw--;
+	return (ret);
+}
+
+Fixed&		Fixed::operator--()
+{
+	raw--;
+	return (*this);
+}
+
 
 std::ostream& operator<<(std::ostream& os, const Fixed &fx)
 {
@@ -107,7 +128,6 @@ std::ostream& operator<<(std::ostream& os, const Fixed &fx)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (raw);
 }
 
@@ -124,4 +144,24 @@ float	Fixed::toFloat() const
 int		Fixed::toInt() const
 {
 	return  (raw >> Q);
+}
+
+const Fixed&	Fixed::min(const Fixed &f1, const Fixed &f2)
+{
+	return (f1 < f2 ? f1 : f2);
+}
+
+const Fixed&	Fixed::max(const Fixed &f1, const Fixed &f2)
+{
+	return (f1 > f2 ? f1 : f2);
+}
+
+Fixed&	Fixed::min(Fixed &f1, Fixed &f2)
+{
+	return (f1 < f2 ? f1 : f2);
+}
+
+Fixed&	Fixed::max(Fixed &f1, Fixed &f2)
+{
+	return (f1 > f2 ? f1 : f2);
 }
