@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/02 14:29:16 by mcossu            #+#    #+#             */
+/*   Updated: 2021/05/02 14:29:17 by mcossu           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ZombieEvent.hpp"
 
 std::string ZombieEvent::names[10] = {"Mathijs", "Zenas", "Pirnal", "Famine", "Beasts", "Phedan", "Sword", "Mexont", "Genar", "Mur"};
