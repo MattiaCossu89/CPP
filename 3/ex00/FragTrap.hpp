@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:19 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 18:15:59 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/02 18:32:58 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ class FragTrap
 	public:
 		FragTrap();
 		FragTrap(const str &name);
+		FragTrap(const FragTrap &cpy);
+		FragTrap &operator=(const FragTrap &cpy);
 		~FragTrap();
 		void	rangedAttack(str const &target) const;
 		void	meleeAttack(str const &target) const;

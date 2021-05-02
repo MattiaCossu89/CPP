@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:16 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 18:25:24 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/02 18:41:18 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,26 @@ FragTrap::FragTrap(const str &name_) : name(name_), life(100), maxlife(100), mc2
 	(void)maxmc2;
 	std::cout << "FR4G_TP \033[32m" << name << "\033[0m " << randBornMessage() << std::endl;
 }
+
+FragTrap::FragTrap(const FragTrap &cpy)
+{
+	*this = cpy;
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &cpy)
+{
+	name = cpy.name;
+	life = cpy.life;
+	maxlife = cpy.maxlife;
+	mc2 = cpy.mc2;
+	maxmc2 = cpy.maxmc2;
+	level = cpy.level;
+	meleeDmg = cpy.meleeDmg;
+	rangedDmg = cpy.rangedDmg;
+	armor = cpy.armor;
+	return (*this);
+}
+
 
 FragTrap::~FragTrap()
 {
