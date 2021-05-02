@@ -6,23 +6,23 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:16 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 15:52:18 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/02 18:25:24 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-const str	names[NN];
+const str	FragTrap::names[NN] = { "Jack", "John" };
 
-const str	surNames[NS];
+const str	FragTrap::surNames[NS] = { "il Bello", "il Brutto" };
 
-const str	messBorn[NMB] = { "is born!" };
+const str	FragTrap::messBorn[NMB] = { "is born!" };
 
-const str	messDestroy[NMD] = { "is destroyed!" };
+const str	FragTrap::messDestroy[NMD] = { "is destroyed!" };
 
-bool		first = true;
+bool		FragTrap::first = true;
 
-const str	&FragTrap::randName()
+const str	FragTrap::randName()
 {
 	if (first)
 	{
@@ -52,13 +52,16 @@ const str	&FragTrap::randDestroyMessage()
 	return (messDestroy[rand() % NMD]);
 }
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : name(randName()), life(100), maxlife(100), mc2(100), maxmc2(100), level(1), meleeDmg(30), rangedDmg(20), armor(5)
 {
-	FragTrap(randName());
+	std::cout << "FR4G_TP \033[32m" << name << "\033[0m " << randBornMessage() << std::endl;
 }
 
-FragTrap::FragTrap(const str &name_) : name(name_), life(100), maxlife(100), mc2(100), maxmc2(100), level(1), maleeAttack(30), rangeAttack(20), armor(5)
+FragTrap::FragTrap(const str &name_) : name(name_), life(100), maxlife(100), mc2(100), maxmc2(100), level(1), meleeDmg(30), rangedDmg(20), armor(5)
 {
+	(void)level;
+	(void)mc2;
+	(void)maxmc2;
 	std::cout << "FR4G_TP \033[32m" << name << "\033[0m " << randBornMessage() << std::endl;
 }
 
@@ -69,12 +72,12 @@ FragTrap::~FragTrap()
 
 void	FragTrap::rangedAttack(str const &target) const
 {
-	std::cout << "FR4G_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m at range, causing " << rangeAttack << " points of damage!" << std::endl;
+	std::cout << "FR4G_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m at range, causing " << rangedDmg << " points of damage!" << std::endl;
 }
 
 void	FragTrap::meleeAttack(str const &target) const
 {
-	std::cout << "FR4G_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m with melee attack, causing " << rangeAttack << " points of damage!" << std::endl;
+	std::cout << "FR4G_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m with melee attack, causing " << meleeDmg << " points of damage!" << std::endl;
 }
 
 void	FragTrap::takeDamage(UI amount)
@@ -91,3 +94,7 @@ void	FragTrap::beRepaired(UI amount)
 	std::cout << "FR4G_TP \033[32m" << name << "\033[0m repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
 }
 
+str		FragTrap::getName()
+{
+	return (name);
+}

@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:19 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 15:50:48 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/02 18:15:59 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 #define UI unsigned int
 #define str std::string
-#define NN 20
-#define NS 20
+#define NN 2
+#define NS 2
 #define NMB 1
 #define NMD 1
 
@@ -31,17 +31,17 @@ class FragTrap
 		UI	mc2;
 		UI	maxmc2;
 		UI	level;
-		UI	maleeAttack;
-		UI	rangeAttack;
+		UI	meleeDmg;
+		UI	rangedDmg;
 		UI	armor;
 
 		static const str	names[NN];
 		static const str	surNames[NS];
 		static const str	messBorn[NMB];
 		static const str	messDestroy[NMD];
-		static bool	first;
+		static bool			first;
 
-		static const str	&randName();
+		static const str	randName();
 		static const str	&randBornMessage();
 		static const str	&randDestroyMessage();
 	public:
@@ -52,4 +52,5 @@ class FragTrap
 		void	meleeAttack(str const &target) const;
 		void	takeDamage(UI amount);
 		void	beRepaired(UI amount);
+		str		getName();
 };
