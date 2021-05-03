@@ -52,6 +52,11 @@ void	FragTrap::meleeAttack(ClapTrap &target) const
 	std::cout << "FR4G_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m with melee attack, causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
 }
 
+str		FragTrap::identify() const
+{
+	return ("FR4G_TP");
+}
+
 void	FragTrap::vaulthunter_dot_exe(ClapTrap &target)
 {
 	vde att;

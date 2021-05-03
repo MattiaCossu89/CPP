@@ -38,6 +38,7 @@ class ClapTrap
 		~ClapTrap();
 		virtual void	rangedAttack(ClapTrap &target) const = 0;
 		virtual void	meleeAttack(ClapTrap &target) const = 0;
+		virtual str		identify() const = 0;
 		int		takeDamage(UI &amount);
 		int		beRepaired(UI &amount);
 		bool	useEnergy(UI amount);

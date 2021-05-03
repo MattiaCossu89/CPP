@@ -38,6 +38,7 @@ class FragTrap : public virtual ClapTrap
 		~FragTrap();
 		virtual void	rangedAttack(ClapTrap &target) const;
 		virtual void	meleeAttack(ClapTrap &target) const;
+		virtual str		identify() const;
 		void	vaulthunter_dot_exe(ClapTrap &target);
 		void	takeDamage(UI amount);
 		void	beRepaired(UI amount);
