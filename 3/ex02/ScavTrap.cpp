@@ -55,7 +55,7 @@ void	ScavTrap::challengeNewcomer(ClapTrap &target)
 {
 	if (!this->useEnergy(25))
 	{
-		std::cout << this->getName() << " has no more energy" << std::endl;
+		std::cout << this->getName() << " has no more energy for challenging anyone" << std::endl;
 		return ;
 	}
 	std::cout << "SC4V_TP " << this->getName() << " " << challenges[rand() % NVDE] << " VS " << target.getName() << std::endl;
