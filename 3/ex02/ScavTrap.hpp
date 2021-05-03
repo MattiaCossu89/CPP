@@ -23,10 +23,9 @@ class ScavTrap : public virtual ClapTrap
 		ScavTrap(const ScavTrap &cpy);
 		ScavTrap &operator=(const ScavTrap &cpy);
 		~ScavTrap();
-		void	rangedAttack(str const &target) const;
-		void	meleeAttack(str const &target) const;
-		void	challengeNewcomer(str const &target);
+		void	rangedAttack(ClapTrap &target) const;
+		void	meleeAttack(ClapTrap &target) const;
+		void	challengeNewcomer(ClapTrap &target);
 		void	takeDamage(UI amount);
 		void	beRepaired(UI amount);
-		str		getName();
 };
