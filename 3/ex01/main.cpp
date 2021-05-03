@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:22 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 18:10:38 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 17:05:15 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ typedef void (FragTrap::*fun)(str const &) const;
 
 int main()
 {
+		srand(time(0));
+
 	FragTrap frags[10];
 	fun f[2] = { &FragTrap::meleeAttack, &FragTrap::rangedAttack };
 	fun f_;

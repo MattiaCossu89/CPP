@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:30:44 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:50:51 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 16:36:48 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void	SuperTrap::takeDamage(UI amount)
 
 void	SuperTrap::beRepaired(UI amount)
 {
-	int life = this->ClapTrap::beRepaired(amount);
+	this->ClapTrap::beRepaired(amount);
+
 	std::cout << "SUP_TP \033[32m" << this->getName() << "\033[0m repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
 }
 

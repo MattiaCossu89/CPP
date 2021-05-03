@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:24 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:21:36 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 16:25:38 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define UI unsigned int
 #define str std::string
-#define NN 2
+#define NN 11
 #define NS 2
 #define NMB 1
 #define NMD 1

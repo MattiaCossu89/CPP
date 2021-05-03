@@ -6,13 +6,13 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:22 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 18:10:38 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 16:44:13 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-typedef void (FragTrap::*fun)(str const &) const;
+typedef void (FragTrap::*fun)(ClapTrap &) const;
 
 int main()
 {

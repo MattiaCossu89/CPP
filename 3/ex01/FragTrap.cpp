@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:16 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 18:41:18 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 17:05:29 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define vde FragTrap::t_vde
 
-const str	FragTrap::names[NN] = { "Jack", "John" };
+const str	FragTrap::names[NN] = { "B00B13-TP", "B34I2-TP", "D3TH-TP", "H0U5E-TP", "T4CO-TP", "N4P-TP", "F4P-TP", "S14P-TP", "M0U5-TP", "J0XS-TP", "IT54-TP" };
 
 const str	FragTrap::surNames[NS] = { "il Bello", "il Brutto" };
 
@@ -33,7 +33,7 @@ const str	FragTrap::randName()
 		srand(time(0));
 		first = false;
 	}
-	return (names[rand() % NN] + " " + surNames[rand() % NS]);
+	return (names[rand() % NN]);
 }
 
 const str	&FragTrap::randBornMessage()

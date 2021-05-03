@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:59 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:40:43 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 17:03:44 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ void	NinjaTrap::takeDamage(UI amount)
 
 void	NinjaTrap::beRepaired(UI amount)
 {
-	int life = this->ClapTrap::beRepaired(amount);
+	this->ClapTrap::beRepaired(amount);
+
 	std::cout << "NJ4_TP \033[32m" << this->getName() << "\033[0m repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
 }
 
@@ -72,7 +73,7 @@ void	NinjaTrap::ninjaShoebox(FragTrap &target)
 		std::cout << this->getName() << " has no more energy for challenging anyone" << std::endl;
 		return ;
 	}
-	std::cout << "NJ4_TP " << this->getName() << " " << challenges[rand() % NVDE] << " VS " << target.getName() << std::endl;
+	std::cout << "NJ4_TP " << this->getName() << " " << " VS " << target.getName() << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(ScavTrap &target)
@@ -82,7 +83,7 @@ void	NinjaTrap::ninjaShoebox(ScavTrap &target)
 		std::cout << this->getName() << " has no more energy for challenging anyone" << std::endl;
 		return ;
 	}
-	std::cout << "NJ4_TP " << this->getName() << " " << challenges[rand() % NVDE] << " VS " << target.getName() << std::endl;
+	std::cout << "NJ4_TP " << this->getName() << " " << " VS " << target.getName() << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(NinjaTrap &target)
@@ -92,5 +93,5 @@ void	NinjaTrap::ninjaShoebox(NinjaTrap &target)
 		std::cout << this->getName() << " has no more energy for challenging anyone" << std::endl;
 		return ;
 	}
-	std::cout << "NJ4_TP " << this->getName() << " " << challenges[rand() % NVDE] << " VS " << target.getName() << std::endl;
+	std::cout << "NJ4_TP " << this->getName() << " " << " VS " << target.getName() << std::endl;
 }

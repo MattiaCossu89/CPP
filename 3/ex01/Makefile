@@ -8,7 +8,7 @@ CPP = clang++
 
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-NAME = super_trap
+NAME = trap
 
 %.o : %.cpp
 	$(CPP) $(FLAGS) -c $< -o $(<:.cpp=.o)

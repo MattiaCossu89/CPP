@@ -6,13 +6,13 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:50 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:19:51 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 16:30:39 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-const str	ClapTrap::names[NN] = { "Jack", "John" };
+const str	ClapTrap::names[NN] = { "B00B13-TP", "B34I2-TP", "D3TH-TP", "H0U5E-TP", "T4CO-TP", "N4P-TP", "F4P-TP", "S14P-TP", "M0U5-TP", "J0XS-TP", "IT54-TP" };
 
 const str	ClapTrap::surNames[NS] = { "il Bello", "il Brutto" };
 
@@ -20,7 +20,7 @@ bool		ClapTrap::first = true;
 
 const str	ClapTrap::randName()
 {
-	return (names[rand() % NN] + " " + surNames[rand() % NS]);
+	return (names[rand() % NN]);
 }
 
 ClapTrap::ClapTrap(const str &name_, UI life_, UI maxlife_, UI mc2_, UI maxmc2_, UI level_, UI meleeDmg_, UI rangedDmg_, UI armor_) :

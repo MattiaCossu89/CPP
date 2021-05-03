@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:54 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:50:05 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 16:26:36 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 
 #define UI unsigned int
 #define str std::string
-#define NN 2
-#define NS 2
+#define NN 11
 #define NMB 1
 #define NMD 1
 
@@ -36,7 +35,6 @@ class ClapTrap
 		UI	armor;
 
 		static const str	names[NN];
-		static const str	surNames[NS];
 		static bool			first;
 
 		static const str	randName();
