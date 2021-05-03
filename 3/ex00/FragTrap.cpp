@@ -12,6 +12,8 @@
 
 #include "FragTrap.hpp"
 
+#define vde FragTrap::t_vde
+
 const str	FragTrap::names[NN] = { "Jack", "John" };
 
 const str	FragTrap::surNames[NS] = { "il Bello", "il Brutto" };
@@ -19,6 +21,8 @@ const str	FragTrap::surNames[NS] = { "il Bello", "il Brutto" };
 const str	FragTrap::messBorn[NMB] = { "is born!" };
 
 const str	FragTrap::messDestroy[NMD] = { "is destroyed!" };
+
+const vde	FragTrap::vde_attacks[NVDE] = { {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30} };
 
 bool		FragTrap::first = true;
 
@@ -99,6 +103,25 @@ void	FragTrap::meleeAttack(str const &target) const
 {
 	std::cout << "FR4G_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m with melee attack, causing " << meleeDmg << " points of damage!" << std::endl;
 }
+
+void	FragTrap::vaulthunter_dot_exe(str const &target)
+{
+	vde att;
+	if (mc2 < 25)
+	{
+		std::cout << name << "has no more energy" << std::endl;
+		return ;
+	}
+	mc2 -= 25;
+	if (first)
+	{
+		srand(time(0));
+		first = false;
+	}
+	att = vde_attacks[rand() % NVDE];
+	std::cout << "FR4G_TP " << name << " " << att.message << " VS " << target << " causing " << att.dmg << " damages" << std::endl;
+}
+
 
 void	FragTrap::takeDamage(UI amount)
 {

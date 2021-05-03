@@ -18,6 +18,7 @@
 #define NS 2
 #define NMB 1
 #define NMD 1
+#define NVDE 5
 
 #include <string>
 #include <iostream>
@@ -25,6 +26,12 @@
 class FragTrap
 {
 	private:
+		typedef struct	s_vde
+		{
+			str	message;
+			UI	dmg;
+		}				t_vde;
+
 		str	name;
 		UI	life;
 		UI	maxlife;
@@ -39,6 +46,7 @@ class FragTrap
 		static const str	surNames[NS];
 		static const str	messBorn[NMB];
 		static const str	messDestroy[NMD];
+		static const t_vde	vde_attacks[NVDE];
 		static bool			first;
 
 		static const str	randName();
@@ -52,6 +60,7 @@ class FragTrap
 		~FragTrap();
 		void	rangedAttack(str const &target) const;
 		void	meleeAttack(str const &target) const;
+		void	vaulthunter_dot_exe(str const &target);
 		void	takeDamage(UI amount);
 		void	beRepaired(UI amount);
 		str		getName();
