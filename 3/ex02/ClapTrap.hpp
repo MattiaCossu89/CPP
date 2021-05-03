@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/03 15:19:24 by mcossu            #+#    #+#             */
+/*   Updated: 2021/05/03 15:21:36 by mcossu           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 #define UI unsigned int
@@ -6,7 +18,6 @@
 #define NS 2
 #define NMB 1
 #define NMD 1
-#define NVDE 5
 
 #include <string>
 #include <iostream>

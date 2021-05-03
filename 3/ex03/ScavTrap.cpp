@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:20:09 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:20:10 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 15:41:01 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &cpy)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "SC4V_TP \033[31m" << this->getName() << "\033[0m "<< std::endl;
+	std::cout << "SC4V_TP \033[31m" << this->getName() << "\033[0m Destroyed"<< std::endl;
 }
 
 void	ScavTrap::rangedAttack(ClapTrap &target) const

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:19:40 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:21:45 by mcossu           ###   ########.fr       */
+/*   Created: 2021/05/03 15:20:05 by mcossu            #+#    #+#             */
+/*   Updated: 2021/05/03 15:33:56 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define UI unsigned int
 #define str std::string
-#define NVDE 5
+#define NCN 5
 
 #include "ClapTrap.hpp"
 
@@ -24,7 +24,7 @@
 class ScavTrap : public virtual ClapTrap
 {
 	private:
-		static const str	challenges[NVDE];
+		static const str	challenges[NCN];
 	public:
 		ScavTrap();
 		ScavTrap(const str &name);

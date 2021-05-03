@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:19:40 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:21:45 by mcossu           ###   ########.fr       */
+/*   Created: 2021/05/03 15:30:48 by mcossu            #+#    #+#             */
+/*   Updated: 2021/05/03 15:37:21 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
-#define UI unsigned int
-#define str std::string
-#define NVDE 5
-
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 
-#include <string>
-#include <iostream>
-
-class ScavTrap : public virtual ClapTrap
+class SuperTrap : public virtual FragTrap, public virtual SuperTrap
 {
-	private:
-		static const str	challenges[NVDE];
 	public:
-		ScavTrap();
-		ScavTrap(const str &name);
-		ScavTrap(const ScavTrap &cpy);
-		ScavTrap &operator=(const ScavTrap &cpy);
-		~ScavTrap();
+		SuperTrap();
+		SuperTrap(const str &name);
+		SuperTrap(const SuperTrap &cpy);
+		SuperTrap &operator=(const SuperTrap &cpy);
+		~SuperTrap();
 		virtual void	rangedAttack(ClapTrap &target) const;
 		virtual void	meleeAttack(ClapTrap &target) const;
 		virtual str		identify() const;
-		void	challengeNewcomer(ClapTrap &target);
+		void	ninjaShoebox(SuperTrap &target);
 		void	takeDamage(UI amount);
 		void	beRepaired(UI amount);
 };

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:19:37 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:41:11 by mcossu           ###   ########.fr       */
+/*   Created: 2021/05/03 15:20:09 by mcossu            #+#    #+#             */
+/*   Updated: 2021/05/03 15:33:47 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-const str	ScavTrap::challenges[NVDE] = { "hi man", "hi man", "hi man", "hi man", "hi man" };
+const str	ScavTrap::challenges[NCN] = { "hi man", "hi man", "hi man", "hi man", "hi man" };
 
 ScavTrap::ScavTrap() : ClapTrap(100, 100, 50, 50, 1, 20, 15, 3)
 {
@@ -37,7 +37,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &cpy)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "SC4V_TP \033[31m" << this->getName() << "\033[0m Destroyed"<< std::endl;
+	std::cout << "SC4V_TP \033[31m" << this->getName() << "\033[0m "<< std::endl;
 }
 
 void	ScavTrap::rangedAttack(ClapTrap &target) const
@@ -75,6 +75,6 @@ void	ScavTrap::challengeNewcomer(ClapTrap &target)
 		std::cout << this->getName() << " has no more energy for challenging anyone" << std::endl;
 		return ;
 	}
-	std::cout << "SC4V_TP " << this->getName() << " " << challenges[rand() % NVDE] << " VS " << target.getName() << std::endl;
+	std::cout << "SC4V_TP " << this->getName() << " " << challenges[rand() % NCN] << " VS " << target.getName() << std::endl;
 }
 

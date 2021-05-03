@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:16 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 18:41:18 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 15:40:52 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ FragTrap &FragTrap::operator=(const FragTrap &cpy)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FR4G_TP \033[31m" << this->getName() << "\033[0m "<< std::endl;
+	std::cout << "FR4G_TP \033[31m" << this->getName() << "\033[0m Destroyed"<< std::endl;
 }
 
 void	FragTrap::rangedAttack(ClapTrap &target) const

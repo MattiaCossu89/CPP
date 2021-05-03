@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:59 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:40:43 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 15:40:15 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,5 @@ void	NinjaTrap::ninjaShoebox(NinjaTrap &target)
 		std::cout << this->getName() << " has no more energy for challenging anyone" << std::endl;
 		return ;
 	}
-	std::cout << "NJ4_TP " << this->getName() << " " << challenges[rand() % NVDE] << " VS " << target.getName() << std::endl;
+	std::cout << "NJ4_TP " << this->getName() << " " << " VS " << target.getName() << std::endl;
 }

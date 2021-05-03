@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 15:19:40 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:21:45 by mcossu           ###   ########.fr       */
+/*   Created: 2021/05/03 15:20:01 by mcossu            #+#    #+#             */
+/*   Updated: 2021/05/03 15:27:48 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,28 @@
 #define NVDE 5
 
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 #include <string>
 #include <iostream>
 
-class ScavTrap : public virtual ClapTrap
+class NinjaTrap : public virtual ClapTrap
 {
 	private:
 		static const str	challenges[NVDE];
 	public:
-		ScavTrap();
-		ScavTrap(const str &name);
-		ScavTrap(const ScavTrap &cpy);
-		ScavTrap &operator=(const ScavTrap &cpy);
-		~ScavTrap();
+		NinjaTrap();
+		NinjaTrap(const str &name);
+		NinjaTrap(const NinjaTrap &cpy);
+		NinjaTrap &operator=(const NinjaTrap &cpy);
+		~NinjaTrap();
 		virtual void	rangedAttack(ClapTrap &target) const;
 		virtual void	meleeAttack(ClapTrap &target) const;
 		virtual str		identify() const;
-		void	challengeNewcomer(ClapTrap &target);
+		void	ninjaShoebox(FragTrap &target);
+		void	ninjaShoebox(ScavTrap &target);
+		void	ninjaShoebox(NinjaTrap &target);
 		void	takeDamage(UI amount);
 		void	beRepaired(UI amount);
 };
