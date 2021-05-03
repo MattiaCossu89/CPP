@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:08 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 16:36:48 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 17:20:01 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,6 @@ void	ScavTrap::takeDamage(UI amount)
 
 void	ScavTrap::beRepaired(UI amount)
 {
-	this->ClapTrap::beRepaired(amount);
 	if (life + amount > maxlife) { life = maxlife; amount = maxlife - life;}
 	else life += amount;
 	std::cout << "SC4V_TP \033[32m" << name << "\033[0m repairs himself of " << "\033[32m" << amount << "\033[0m points!" << std::endl;

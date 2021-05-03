@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:16 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 16:36:48 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 17:19:29 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ const str	FragTrap::messBorn[NMB] = { "is born!" };
 const str	FragTrap::messDestroy[NMD] = { "is destroyed!" };
 
 const vde	FragTrap::vde_attacks[NVDE] = { {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30} };
+// const vde	FragTrap::vde_attacks[NVDE] = { {"", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30} };
 
 bool		FragTrap::first = true;
 
@@ -132,7 +133,6 @@ void	FragTrap::takeDamage(UI amount)
 
 void	FragTrap::beRepaired(UI amount)
 {
-	this->ClapTrap::beRepaired(amount);
 	if (life + amount > maxlife) { life = maxlife; amount = maxlife - life;}
 	else life += amount;
 	std::cout << "FR4G_TP \033[32m" << name << "\033[0m repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
