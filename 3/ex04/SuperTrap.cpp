@@ -6,13 +6,13 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:30:44 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:40:01 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 15:50:51 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap() : ClapTrap(60, 60, 120, 120, 1, 60, 5, 0)
+SuperTrap::SuperTrap() : ClapTrap(100, 100, 120, 120, 1, 60, 20, 5)
 {
 	std::cout << "SUP_TP \033[32m" << this->getName() << "\033[0m is Born!!" << std::endl;
 }
@@ -40,12 +40,14 @@ SuperTrap::~SuperTrap()
 
 void	SuperTrap::rangedAttack(ClapTrap &target) const
 {
-	std::cout << "SUP_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m at range, causing " << this->getRangedDmg() << " points of damage!" << std::endl;
+	this->FragTrap::meleeAttack(target);
+	// std::cout << "SUP_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m at range, causing " << this->getRangedDmg() << " points of damage!" << std::endl;
 }
 
 void	SuperTrap::meleeAttack(ClapTrap &target) const
 {
-	std::cout << "SUP_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m with melee attack, causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
+	this->NinjaTrap::meleeAttack(target);
+	// std::cout << "SUP_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m with melee attack, causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
 }
 
 str		SuperTrap::identify() const

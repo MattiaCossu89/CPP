@@ -6,11 +6,14 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:54 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 15:21:25 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/03 15:50:05 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#include <string>
+#include <iostream>
 
 #define UI unsigned int
 #define str std::string
@@ -18,9 +21,6 @@
 #define NS 2
 #define NMB 1
 #define NMD 1
-
-#include <string>
-#include <iostream>
 
 class ClapTrap
 {
