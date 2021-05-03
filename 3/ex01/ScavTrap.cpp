@@ -1,0 +1,127 @@
+#include "ScavTrap.hpp"
+
+const str	ScavTrap::names[NN] = { "Jack", "John" };
+
+const str	ScavTrap::surNames[NS] = { "il Bello", "il Brutto" };
+
+const str	ScavTrap::messBorn[NMB] = { "is born!" };
+
+const str	ScavTrap::messDestroy[NMD] = { "is destroyed!" };
+
+const str	ScavTrap::challenges[NVDE] = { "hi man", "hi man", "hi man", "hi man", "hi man" };
+
+bool		ScavTrap::first = true;
+
+const str	ScavTrap::randName()
+{
+	if (first)
+	{
+		srand(time(0));
+		first = false;
+	}
+	return (names[rand() % NN] + " " + surNames[rand() % NS]);
+}
+
+const str	&ScavTrap::randBornMessage()
+{
+	if (first)
+	{
+		srand(time(0));
+		first = false;
+	}
+	return (messBorn[rand() % NMB]);
+}
+
+const str	&ScavTrap::randDestroyMessage()
+{
+	if (first)
+	{
+		srand(time(0));
+		first = false;
+	}
+	return (messDestroy[rand() % NMD]);
+}
+
+ScavTrap::ScavTrap() : name(randName()), life(100), maxlife(100), mc2(50), maxmc2(50), level(1), meleeDmg(20), rangedDmg(15), armor(3)
+{
+	std::cout << "SC4V_TP \033[32m" << name << "\033[0m " << randBornMessage() << std::endl;
+}
+
+ScavTrap::ScavTrap(const str &name_) : name(name_), life(100), maxlife(100), mc2(50), maxmc2(50), level(1), meleeDmg(20), rangedDmg(15), armor(3)
+{
+	(void)level;
+	(void)mc2;
+	(void)maxmc2;
+	std::cout << "SC4V_TP \033[32m" << name << "\033[0m " << randBornMessage() << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap &cpy)
+{
+	*this = cpy;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &cpy)
+{
+	name = cpy.name;
+	life = cpy.life;
+	maxlife = cpy.maxlife;
+	mc2 = cpy.mc2;
+	maxmc2 = cpy.maxmc2;
+	level = cpy.level;
+	meleeDmg = cpy.meleeDmg;
+	rangedDmg = cpy.rangedDmg;
+	armor = cpy.armor;
+	return (*this);
+}
+
+
+ScavTrap::~ScavTrap()
+{
+	std::cout << "SC4V_TP \033[31m" << name << "\033[0m " << randDestroyMessage() << std::endl;
+}
+
+void	ScavTrap::rangedAttack(str const &target) const
+{
+	std::cout << "SC4V_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m at range, causing " << rangedDmg << " points of damage!" << std::endl;
+}
+
+void	ScavTrap::meleeAttack(str const &target) const
+{
+	std::cout << "SC4V_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m with melee attack, causing " << meleeDmg << " points of damage!" << std::endl;
+}
+
+void	ScavTrap::challengeNewcomer(str const &target)
+{
+	if (mc2 < 25)
+	{
+		std::cout << name << " has no more energy" << std::endl;
+		return ;
+	}
+	mc2 -= 25;
+	if (first)
+	{
+		srand(time(0));
+		first = false;
+	}
+	std::cout << "SC4V_TP " << name << " " << challenges[rand() % NVDE] << " VS " << target << std::endl;
+}
+
+
+void	ScavTrap::takeDamage(UI amount)
+{
+	if (amount - armor > life && (amount = life)) life = 0;
+	else life -= amount - armor;
+	std::cout << "SC4V_TP \033[31m" << name << "\033[0m take " << (life ? "\033[33m" : "\033[31m") << amount << "\033[0m points of damage!" << std::endl;
+}
+
+void	ScavTrap::beRepaired(UI amount)
+{
+	if (life + amount > maxlife) { life = maxlife; amount = maxlife - life;}
+	else life += amount;
+	std::cout << "SC4V_TP \033[32m" << name << "\033[0m repairs himself of " << "\033[32m" << amount << "\033[0m points!" << std::endl;
+}
+
+str		ScavTrap::getName()
+{
+	return (name);
+}
