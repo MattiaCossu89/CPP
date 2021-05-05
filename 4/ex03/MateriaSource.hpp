@@ -8,7 +8,7 @@
 
 #define str std::string
 
-class MateriaSource : virtual public IMateriaSource
+class MateriaSource : public IMateriaSource
 {
 	private:
 		AMateria	*materia[4];

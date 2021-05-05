@@ -10,7 +10,7 @@
 #include <iostream>
 #include <string>
 
-class Character : virtual public ICharacter
+class Character : public ICharacter
 {
 	private:
 		str	_name;

@@ -25,7 +25,18 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-	*this = copy;
+	for (int i = 0; i < 4; i++)
+	{
+		if (!copy.materia[i])
+		{
+			materia[i] = 0;
+			materia_name[i] = "";
+			continue ;
+		}
+		materia[i] = copy.materia[i]->clone();
+		materia_name[i] = copy.materia_name[i];
+	}
+	learned = copy.learned;
 }
 
 MateriaSource::~MateriaSource()
@@ -40,6 +51,8 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 	free_materia();
 	for (int i = 0; i < 4; i++)
 	{
+		if (!copy.materia[i])
+			continue ;
 		materia[i] = copy.materia[i]->clone();
 		materia_name[i] = copy.materia_name[i];
 	}
