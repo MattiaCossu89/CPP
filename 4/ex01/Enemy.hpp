@@ -11,8 +11,8 @@ class Enemy
 	private:
 		Enemy();
 	protected:
-		int	hp;
-		str	name;
+		int	_hp;
+		str	_type;
 	public:
 		Enemy(int hp, str const &type);
 		Enemy(const Enemy &copy);

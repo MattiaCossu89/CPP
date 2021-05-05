@@ -8,12 +8,12 @@
 #include <iostream>
 #include <string>
 
-class PlasmaFist
+class PowerFist : virtual public AWeapon
 {
 	public:
-		PlasmaFist();
-		PlasmaFist(const PlasmaFist &copy);
-		PlasmaFist &operator=(const PlasmaFist &copy);
-		~PlasmaFist();
+		PowerFist();
+		PowerFist(const PowerFist &copy);
+		PowerFist &operator=(const PowerFist &copy);
+		~PowerFist();
 		virtual void	attack() const;
 };

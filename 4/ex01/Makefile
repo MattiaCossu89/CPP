@@ -13,7 +13,7 @@ CPP = clang++
 
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
-NAME = sorcer
+NAME = battle
 
 %.o : %.cpp
 	$(CPP) $(FLAGS) -c $< -o $(<:.cpp=.o)

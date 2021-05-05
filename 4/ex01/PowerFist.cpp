@@ -1,11 +1,11 @@
 #include "PowerFist.hpp"
 
-PowerFist::PowerFist() : AWeapon("Plasma Fist", 50, 8) {}
+PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50) {}
 
 PowerFist::PowerFist(const PowerFist &copy) : AWeapon(copy) {}
 
 PowerFist &PowerFist::operator=(const PowerFist &copy)
-
+{
 	this->name = copy.name;
 	this->apcost = copy.apcost;
 	this->damage = copy.damage;
