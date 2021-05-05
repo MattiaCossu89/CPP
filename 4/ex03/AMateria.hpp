@@ -8,6 +8,7 @@
 #include "ICharacter.hpp"
 
 #include <string>
+class ICharacter;
 
 class AMateria
 {

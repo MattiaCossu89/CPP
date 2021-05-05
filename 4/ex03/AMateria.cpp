@@ -33,5 +33,6 @@ UI AMateria::getXP() const
 
 void AMateria::use(ICharacter& target)
 {
+	(void)target;
 	_xp += 10;
 }

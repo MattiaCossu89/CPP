@@ -19,10 +19,10 @@ class Character : virtual public ICharacter
 	public:
 		Character(str const &name);
 		Character(const Character &cpy);
-		virtual ~Character();
+		~Character();
 		Character &operator=(const Character &cpy);
 		virtual str const & getName() const;
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
-		virtual void use(int idx, Character& target);
+		virtual void use(int idx, ICharacter& target);
 };
