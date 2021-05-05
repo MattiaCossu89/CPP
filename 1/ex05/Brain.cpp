@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:29:44 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 14:29:45 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/05 15:27:11 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string Brain::identify() const
 
 	s << this;
 	str = s.str();
-	for(int i = 0; i < s.str().length(); i++)
+	for(size_t i = 0; i < s.str().length(); i++)
 		str[i] = toupper(str[i]);
 	return (str);
 }

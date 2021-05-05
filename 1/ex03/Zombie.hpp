@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:29:30 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/02 14:29:31 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/05 15:26:01 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ std::string typeToString(Type type);
 class Zombie
 {
 	private:
-		Type type;
 		std::string name;
+		Type type;
 	public:
 		Zombie();
 		Zombie(std::string name);
