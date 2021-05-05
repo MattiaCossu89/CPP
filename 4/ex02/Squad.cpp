@@ -36,6 +36,9 @@ Squad::~Squad()
 			delete _squad[i];
 		delete [] _squad;
 	}
+	_squad = 0;
+	_size = 0;
+	_capacity = 0;
 }
 
 int Squad::getCount() const

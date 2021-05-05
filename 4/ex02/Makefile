@@ -7,7 +7,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 CPP = clang++
 
-FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
+FLAGS = -g -Wall -Wextra -Werror -pedantic -std=c++98
 
 NAME = squad
 
