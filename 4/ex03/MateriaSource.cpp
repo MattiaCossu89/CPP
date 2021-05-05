@@ -2,7 +2,9 @@
 
 void	MateriaSource::free_materia()
 {
-	for (int i = 0; i < 4; i++)
+	if (!learned)
+		return ;
+	for (int i = 0; i < learned; i++)
 		if (materia[i])
 			delete materia[i];
 	for (int i = 0; i < 4; i++)
@@ -27,16 +29,11 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (!copy.materia[i])
-		{
-			materia[i] = 0;
-			materia_name[i] = "";
-			continue ;
-		}
-		materia[i] = copy.materia[i]->clone();
-		materia_name[i] = copy.materia_name[i];
+		materia_name[i] = "";
+		materia[i] = 0;
 	}
-	learned = copy.learned;
+	learned = 0;
+	*this = copy;
 }
 
 MateriaSource::~MateriaSource()

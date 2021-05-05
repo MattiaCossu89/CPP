@@ -17,6 +17,8 @@ Character::Character(str const &name) : _name(name)
 
 Character::Character(const Character &cpy)
 {
+	for (int i = 0; i < 4; i++)
+		materia[i] = 0;
 	*this = cpy;
 }
 
