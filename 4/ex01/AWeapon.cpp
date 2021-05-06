@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AWeapon.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/06 15:07:06 by mcossu            #+#    #+#             */
+/*   Updated: 2021/05/06 15:07:07 by mcossu           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AWeapon.hpp"
 
 AWeapon::AWeapon(str const & name_, int apcost_, int damage_) : name(name_), apcost(apcost_), damage(damage_)
