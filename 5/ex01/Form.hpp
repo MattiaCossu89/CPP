@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 16:35:01 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 17:11:01 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/06 17:47:57 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,13 @@ class Form
 		Form(const str &name, int gradeSign, int gradeExec);
 		Form(const Form &copy);
 		~Form();
-		Form &operator=(const Form &copy);
-		const str	&getName() const;
-		int			getGradeSign() const;
-		int			getGradeExec() const;
-		bool		isSigned() const;
-		void		beSigned(const Bureaucrat &bur);
+		Form 			&operator=(const Form &copy);
+		const str		&getName() const;
+		int				getGradeSign() const;
+		int				getGradeExec() const;
+		bool			isSigned() const;
+		void			beSigned(const Bureaucrat &bur);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &os, const Form& bur);
