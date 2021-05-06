@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:54:26 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 16:31:09 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/06 17:05:05 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,9 @@ int main()
 	mario->incGrade();
 	std::cout << *gianni << std::endl;
 	std::cout << *mario << std::endl;
+	delete gianni;
+	delete mario;
+	delete marco;
+	delete manuele;
+
 }
