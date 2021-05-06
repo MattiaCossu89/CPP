@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:04:00 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:04:00 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/06 15:35:17 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ MiningBarge &MiningBarge::operator=(const MiningBarge &copy)
 	for (int i = 0; i < 4; i++)
 		_equip[i] = copy._equip[i];
 	_size = copy._size;
+	return (*this);
 }
 
 
@@ -48,6 +49,7 @@ void MiningBarge::equip(IMiningLaser* laser)
 	if (_size >= 4)
 		return ;
 	_equip[_size] = laser;
+	_size++;
 }
 
 void MiningBarge::mine(IAsteroid* asteroid) const

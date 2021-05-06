@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:03:54 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:03:55 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/06 15:32:25 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define KOALASTEROIDHPP
 
 #include "IAsteroid.hpp"
+#include "DeepCoreMiner.hpp"
+#include "StripMiner.hpp"
 
 #include <string>
 

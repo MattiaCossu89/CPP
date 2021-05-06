@@ -6,14 +6,14 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:03:49 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:03:49 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/06 15:28:25 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMININGLASERHPP
-#define IMININGLASERHPP
+#ifndef IMININGLASER_HPP
+#define IMININGLASER_HPP
 
-#include "IAsteroid.hpp"
+class IAsteroid;
 
 class IMiningLaser
 {

@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:03:38 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:03:39 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/06 15:31:54 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define AsteroKreogHPP
 
 #include "IAsteroid.hpp"
+#include "DeepCoreMiner.hpp"
+#include "StripMiner.hpp"
 
 #include <string>
 

@@ -6,20 +6,19 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:03:46 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:05:09 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/06 15:27:50 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IASTEROIDHPP
 #define IASTEROIDHPP
 
-#include "IMiningLaser.hpp"
-#include "DeepCoreMiner.hpp"
-#include "StripMiner.hpp"
-
 #define str std::string
 
 #include <string>
+
+class DeepCoreMiner;
+class StripMiner;
 
 class IAsteroid
 {

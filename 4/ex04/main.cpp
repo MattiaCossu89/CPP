@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:03:57 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:12:17 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/06 15:34:54 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 	mb.equip(lasers[1]);
 	mb.equip(lasers[1]);
 	mb.equip(lasers[0]);
+	std::cout << astero[0]->getName() << std::endl;
 	mb.mine(astero[0]);
 	mb.mine(astero[1]);
 }
