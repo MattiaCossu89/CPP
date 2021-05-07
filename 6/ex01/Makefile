@@ -7,7 +7,7 @@ CPP = clang++
 
 FLAGS = -g -Wall -Wextra -Werror -pedantic -std=c++98
 
-NAME = bureau
+NAME = serialize
 
 %.o : %.cpp
 	$(CPP) $(FLAGS) -c $< -o $(<:.cpp=.o)
@@ -19,7 +19,6 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -rf $(OBJS)
-	rm *_shrubbery
 
 fclean: clean
 	rm -rf $(NAME)
