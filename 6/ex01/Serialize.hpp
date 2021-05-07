@@ -1,6 +1,9 @@
 #ifndef SERIALIZE_HPP
 #define SERIALIZE_HPP
 
+#include <stdlib.h>
+
+#include <ctime>
 #include <iostream>
 #include <sstream>
 #include <string>

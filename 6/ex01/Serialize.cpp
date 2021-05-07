@@ -3,12 +3,19 @@
 
 void *serialize()
 {
-	std::string *s1;
+	srand(time(NULL));
 	int in;
-	std::string *s2;
-	s1 = new std::string("ciao");
-	in = (1);
-	s2 = new std::string("come");
+	int r = rand() % 40;
+	std::string *s1 = new std::string();
+	std::string *s2 = new std::string();
+	std::string words = "abcdefghilmnopqrstuvzxwyjkABCDEFGHILMNOPQRSTUVZWXYJK";
+	for (int i = 0; i < r; i++)
+		s1->append(words.substr(rand() % 52, 1));
+	r = rand() % 40;
+	for (int i = 0; i < r; i++)
+		s2->append(words.substr(rand() % 52, 1));
+	in = rand() % 100000000;
+	std::cout << "to serialize: \n" << *s1 << " -- " << in << " -- " << *s2 << std::endl;
 	unsigned char *raw = new unsigned char[sizeof(s1) + sizeof(in) + sizeof(s2) + 1];
 	for (size_t i = 0; i<sizeof(s1) + sizeof(in) + sizeof(s2); i++)
 		raw[i] = 0;
