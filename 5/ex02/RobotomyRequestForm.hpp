@@ -33,6 +33,7 @@ class RobotomyRequestForm : public Form
 		static bool first;
 	public:
 		RobotomyRequestForm(const str_t &target);
+		// RobotomyRequestForm(str_t target);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
 		~RobotomyRequestForm();
 		RobotomyRequestForm	&operator=(const RobotomyRequestForm &copy);

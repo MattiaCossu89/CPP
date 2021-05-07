@@ -42,6 +42,7 @@ class ShrubberyCreationForm : public Form
 		static void createShrubberyTrees();
 	public:
 		ShrubberyCreationForm(const str_t &target);
+		// ShrubberyCreationForm(str_t target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &copy);

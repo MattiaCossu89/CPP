@@ -91,6 +91,16 @@ ShrubberyCreationForm::ShrubberyCreationForm(const str_t &target) : Form(target,
 	}
 }
 
+// ShrubberyCreationForm::ShrubberyCreationForm(str_t target) : Form(target, 145, 137)
+// {
+// 	if (first)
+// 	{
+// 		srand(time(NULL));
+// 		createShrubberyTrees();
+// 		first = false;
+// 	}
+// }
+
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : Form(copy)
 {
 

@@ -23,6 +23,15 @@ RobotomyRequestForm::RobotomyRequestForm(const str_t &target) : Form(target, 72,
 	}
 }
 
+// RobotomyRequestForm::RobotomyRequestForm(str_t target) : Form(target, 72, 45)
+// {
+// 	if (first)
+// 	{
+// 		srand(time(NULL));
+// 		first = false;
+// 	}
+// }
+
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form(copy)
 {
 

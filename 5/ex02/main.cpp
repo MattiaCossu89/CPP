@@ -12,8 +12,9 @@
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
@@ -65,6 +66,27 @@ int main()
 	std::cout << *f2 << std::endl;
 	f1->execute(*gianni);
 	f2->execute(*gianni);
+	PresidentialPardonForm f3("Mike");
+	RobotomyRequestForm f4("Mark");
+	RobotomyRequestForm f5("Giusy");
+	ShrubberyCreationForm f6("Beauty");
+	ShrubberyCreationForm f7("Jim");
+	gianni->signForm(f3);
+	gianni->signForm(f4);
+	gianni->signForm(f5);
+	gianni->signForm(f6);
+	gianni->signForm(f7);
+	f3.execute(*gianni);
+	f4.execute(*gianni);
+	f5.execute(*gianni);
+	f6.execute(*gianni);
+	f7.execute(*gianni);
+	try {
+		f7.execute(*mario);
+	}
+	catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
 	delete gianni;
 	delete mario;
 	delete f1;
