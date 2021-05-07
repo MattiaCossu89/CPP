@@ -14,7 +14,7 @@ void *serialize()
 	r = rand() % 40 + 1;
 	for (int i = 0; i < r; i++)
 		s2->append(words.substr(rand() % 52, 1));
-	in = rand() % 100000000;
+	in = rand() % 1000;
 	std::cout << "to serialize: \n" << *s1 << " -- " << in << " -- " << *s2 << std::endl;
 	unsigned char *raw = new unsigned char[sizeof(s1) + sizeof(in) + sizeof(s2) + 1];
 	for (size_t i = 0; i<sizeof(s1) + sizeof(in) + sizeof(s2); i++)
