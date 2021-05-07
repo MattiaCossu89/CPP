@@ -49,7 +49,7 @@ class Form
 		{
 			virtual const char* what() const throw()
 			{
-				return "Grade to exec the form too low";
+				return RED "Grade to exec the form too low" NRM;
 			}
 		};
 		Form(const str_t &name, int gradeSign, int gradeExec);

@@ -35,9 +35,9 @@ Form *Intern::makeForm(const std::string &f_name, const std::string &target) con
 	for (int i = 0; i < 3; i++)
 		if (map[i].name.find(f_name) != std::string::npos)
 		{
-			std::cout << "Intern creates " << f_name << std::endl;
+			std::cout << "Intern creates " GREEN << f_name << NRM << std::endl;
 			return (map[i].met(target));
 		}
-	std::cout << f_name << " Form doesn't exists" << std::endl;
+	std::cout << RED << f_name << NRM " Form doesn't exists" << std::endl;
 	return (0);
 }

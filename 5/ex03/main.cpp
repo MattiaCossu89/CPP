@@ -21,7 +21,7 @@ void	doIT(const Bureaucrat *bur, Form &form)
 {
 	if (!bur)
 	{
-		std::cout << "Inexistent Bureaucrat" << std::endl;
+		std::cout << RED "Inexistent Bureaucrat" NRM << std::endl;
 		return ;
 	}
 	try

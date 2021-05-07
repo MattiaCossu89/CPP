@@ -17,11 +17,6 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form
 
 }
 
-// PresidentialPardonForm::PresidentialPardonForm(str_t target) : Form(target, 25, 5)
-// {
-
-// }
-
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : Form(copy)
 {
 
