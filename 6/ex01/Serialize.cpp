@@ -5,13 +5,13 @@ void *serialize()
 {
 	srand(time(NULL));
 	int in;
-	int r = rand() % 40;
+	int r = rand() % 40 + 1;
 	std::string *s1 = new std::string();
 	std::string *s2 = new std::string();
 	std::string words = "abcdefghilmnopqrstuvzxwyjkABCDEFGHILMNOPQRSTUVZWXYJK";
 	for (int i = 0; i < r; i++)
 		s1->append(words.substr(rand() % 52, 1));
-	r = rand() % 40;
+	r = rand() % 40 + 1;
 	for (int i = 0; i < r; i++)
 		s2->append(words.substr(rand() % 52, 1));
 	in = rand() % 100000000;
@@ -33,7 +33,6 @@ Data *deserialize(void *raw)
 	Data *data = new Data();
 	size_t *real_ = reinterpret_cast<size_t *>(raw);
 	std::string *s1 = reinterpret_cast<std::string *>(*real_);
-	std::cout << (void *)real_ << std::endl;
 	int i = *reinterpret_cast<int *>((real_ + sizeof(s1) / sizeof(size_t)));
 	real_ = reinterpret_cast<size_t *>(reinterpret_cast<unsigned char *>(real_) + sizeof(s1) + sizeof(i));
 	std::string *s2 = reinterpret_cast<std::string *>(*real_ );
