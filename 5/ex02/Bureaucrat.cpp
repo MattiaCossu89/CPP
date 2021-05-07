@@ -12,7 +12,7 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(const str &name, int grade)
+Bureaucrat::Bureaucrat(const str_t &name, int grade)
 {
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
@@ -40,7 +40,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy)
 	return (*this);
 }
 
-const str	&Bureaucrat::getName() const
+const str_t	&Bureaucrat::getName() const
 {
 	return (_name);
 }

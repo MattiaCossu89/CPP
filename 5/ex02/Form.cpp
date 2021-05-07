@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(const str &name, int gradeSign, int gradeExec) : _name(name), _gradeExec(gradeExec), _gradeSign(gradeSign), _signed(false)
+Form::Form(const str_t &name, int gradeSign, int gradeExec) : _name(name), _gradeExec(gradeExec), _gradeSign(gradeSign), _signed(false)
 {
 	if (gradeSign > 150 || gradeExec > 150)
 		throw Form::GradeTooLowException();
@@ -20,12 +20,11 @@ Form::~Form()
 
 Form &Form::operator=(const Form &copy)
 {
-	this->~Form();
-	new (this) Form(copy);
+	_signed = copy._signed;
 	return (*this);
 }
 
-const str	&Form::getName() const
+const str_t	&Form::getName() const
 {
 	return (_name);
 }
@@ -51,6 +50,13 @@ void		Form::beSigned(const Bureaucrat &bur)
 		throw Form::GradeTooLowException();
 	_signed = true;
 }
+
+void		Form::checkBureaucratExec(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > _gradeExec)
+		throw GradeTooLowException();
+}
+
 
 std::ostream &operator<<(std::ostream &os, const Form& form)
 {

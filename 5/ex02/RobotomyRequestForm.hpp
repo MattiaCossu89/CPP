@@ -10,34 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONShrubberyCreationForm_HPP
-#define SHRUBBERYCREATIONShrubberyCreationForm_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
 #include "Form.hpp"
 
+#include <stdlib.h>
+#include <unistd.h>
+
+#include <ctime>
 #include <exception>
 #include <iostream>
 #include <fstream>
 #include <string>
 
-#define str std::string
+#define str_t std::string
 
-class ShrubberyCreationForm : public Form
+class RobotomyRequestForm : public Form
 {
 	private:
-		ShrubberyCreationForm();
-		class OpenFileException : std::exception
-		{
-			virtual const char * what()
-			{
-				std::cout << "File not found" << std::endl;
-			}
-		};
+		RobotomyRequestForm();
+		static bool first;
 	public:
-		ShrubberyCreationForm(const str &target);
-		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-		~ShrubberyCreationForm();
-		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &copy);
+		RobotomyRequestForm(const str_t &target);
+		RobotomyRequestForm(const RobotomyRequestForm &copy);
+		~RobotomyRequestForm();
+		RobotomyRequestForm	&operator=(const RobotomyRequestForm &copy);
 		virtual void	execute(Bureaucrat const & executor) const;
 };
 

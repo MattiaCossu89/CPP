@@ -10,3 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "RobotomyRequestForm.hpp"
+
+bool RobotomyRequestForm::first = true;
+
+RobotomyRequestForm::RobotomyRequestForm(const str_t &target) : Form(target, 72, 45)
+{
+	if (first)
+	{
+		srand(time(NULL));
+		first = false;
+	}
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form(copy)
+{
+
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+
+}
+
+RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
+{
+	this->~RobotomyRequestForm();
+	new (this) RobotomyRequestForm(copy);
+	return (*this);
+}
+
+void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
+{
+	this->checkBureaucratExec(executor);
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << '\a';
+		usleep(100000);
+	}
+	if (rand() % 2)
+		std::cout << getName() << " has been robotomized successfully!" << std::endl;
+	else
+		std::cout << getName() << " robotomization failed!" << std::endl;
+}

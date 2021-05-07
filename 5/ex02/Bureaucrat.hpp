@@ -19,12 +19,12 @@
 #include <iostream>
 #include <string>
 
-#define str std::string
+#define str_t std::string
 class Form;
 class Bureaucrat
 {
 	private:
-		str	_name;
+		str_t	_name;
 		int	_grade;
 		Bureaucrat();
 	public:
@@ -42,11 +42,11 @@ class Bureaucrat
 				return "Grade too low";
 			}
 		};
-		Bureaucrat(const str &name, int grade);
+		Bureaucrat(const str_t &name, int grade);
 		Bureaucrat(const Bureaucrat &copy);
 		~Bureaucrat();
 		Bureaucrat &operator=(const Bureaucrat &copy);
-		const str	&getName() const;
+		const str_t	&getName() const;
 		int			getGrade() const;
 		void		incGrade();
 		void		decGrade();

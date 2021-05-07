@@ -19,12 +19,12 @@
 #include <iostream>
 #include <string>
 
-#define str std::string
+#define str_t std::string
 class Bureaucrat;
 class Form
 {
 	private:
-		const str	_name;
+		const str_t	_name;
 		const int	_gradeExec;
 		const int	_gradeSign;
 		bool		_signed;
@@ -44,15 +44,17 @@ class Form
 				return "Grade to apply the form too low";
 			}
 		};
-		Form(const str &name, int gradeSign, int gradeExec);
+		Form(const str_t &name, int gradeSign, int gradeExec);
 		Form(const Form &copy);
-		~Form();
+		virtual ~Form();
 		Form &operator=(const Form &copy);
-		const str	&getName() const;
+		const str_t	&getName() const;
 		int			getGradeSign() const;
 		int			getGradeExec() const;
 		bool		isSigned() const;
 		void		beSigned(const Bureaucrat &bur);
+		void		checkBureaucratExec(Bureaucrat const & executor) const;
+		virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &os, const Form& bur);

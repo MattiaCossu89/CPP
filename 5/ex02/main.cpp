@@ -12,6 +12,8 @@
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
@@ -37,7 +39,7 @@ int main()
 	}
 	try
 	{
-		f1 = new Form("F1", 10, 10);
+		f1 = new ShrubberyCreationForm("F1");
 	}
 	catch (const std::exception &e)
 	{
@@ -45,7 +47,7 @@ int main()
 	}
 	try
 	{
-		f2 = new Form("F2", 1, 1);
+		f2 = new RobotomyRequestForm("F2");
 	}
 	catch (const std::exception &e)
 	{
@@ -61,6 +63,8 @@ int main()
 	mario->signForm(*f2);
 	std::cout << *f1 << std::endl;
 	std::cout << *f2 << std::endl;
+	f1->execute(*gianni);
+	f2->execute(*gianni);
 	delete gianni;
 	delete mario;
 	delete f1;

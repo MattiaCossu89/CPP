@@ -15,12 +15,16 @@
 
 #include "Form.hpp"
 
+#include <stdlib.h>
+
+#include <ctime>
 #include <exception>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 
-#define str std::string
+#define str_t std::string
 
 class ShrubberyCreationForm : public Form
 {
@@ -28,13 +32,16 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm();
 		class OpenFileException : std::exception
 		{
-			virtual const char * what()
+			virtual const char * what() const throw()
 			{
-				std::cout << "File not found" << std::endl;
+				return ("File not found");
 			}
 		};
+		static bool first;
+		static str_t trees[4];
+		static void createShrubberyTrees();
 	public:
-		ShrubberyCreationForm(const str &target);
+		ShrubberyCreationForm(const str_t &target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &copy);
