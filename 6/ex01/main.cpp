@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <string>
 
 typedef struct Data_s
@@ -33,8 +34,6 @@ void *serialize()
 		raw[i] = 0;
 	for (size_t i = 0; i < sizeof(s1); i++)
 		raw[i] = (reinterpret_cast<unsigned char *>(&s1))[i];
-	std::cout << std::hex << *(size_t*)raw<< std::hex;
-	std::cout << std::endl;
 	for (size_t i = 0; i < sizeof(in); i++)
 		raw[i + sizeof(s1)] = (reinterpret_cast<unsigned char *>(&in))[i];
 	for (size_t i = 0; i < sizeof(s2); i++)
