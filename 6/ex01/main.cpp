@@ -62,5 +62,4 @@ int main()
 	Data *d = deserialize(s);
 	(void)s;
 	std::cout << *(d->s1) << " " << (d->i) << " " << *(d->s2) << std::endl;
-	std::cout << sizeof(Data) << std::endl;
 }
