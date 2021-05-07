@@ -13,6 +13,7 @@
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
 
+#include "colors.hpp"
 #include "Form.hpp"
 
 #include <stdlib.h>

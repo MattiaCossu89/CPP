@@ -13,6 +13,7 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include "colors.hpp"
 #include "Form.hpp"
 
 #include <exception>
@@ -32,14 +33,14 @@ class Bureaucrat
 		{
 			virtual const char* what() const throw()
 			{
-				return "Grade too high";
+				return RED "Grade too high" NRM;
 			}
 		};
 		class GradeTooLowException : public std::exception
 		{
 			virtual const char* what() const throw()
 			{
-				return "Grade too low";
+				return RED "Grade too low" NRM;
 			}
 		};
 		Bureaucrat(const str &name, int grade);

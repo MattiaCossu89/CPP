@@ -13,6 +13,7 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include "colors.hpp"
 #include "Bureaucrat.hpp"
 
 #include <exception>
@@ -34,14 +35,14 @@ class Form
 		{
 			virtual const char* what() const throw()
 			{
-				return "Grade to apply the form too high";
+				return RED "Grade to apply the form too high" NRM;
 			}
 		};
 		class GradeTooLowException : public std::exception
 		{
 			virtual const char* what() const throw()
 			{
-				return "Grade to apply the form too low";
+				return RED "Grade to apply the form too low" NRM;
 			}
 		};
 		class GradeToExecTooLowException : public std::exception

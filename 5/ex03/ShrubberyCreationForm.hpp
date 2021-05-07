@@ -13,6 +13,7 @@
 #ifndef SHRUBBERYCREATION_HPP
 #define SHRUBBERYCREATION_HPP
 
+#include "colors.hpp"
 #include "Form.hpp"
 
 #include <stdlib.h>

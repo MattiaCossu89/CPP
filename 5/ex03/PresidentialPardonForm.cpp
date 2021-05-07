@@ -42,5 +42,5 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPard
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	this->checkBureaucratExec(executor);
-	std::cout << getName() << "has been pardoned by Zafod Beeblebrox" << std::endl;
+	std::cout << YELLOW << getName() << GREEN " has been pardoned by Zafod Beeblebrox" NRM << std::endl;
 }

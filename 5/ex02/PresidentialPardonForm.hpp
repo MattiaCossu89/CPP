@@ -13,6 +13,7 @@
 #ifndef PRESIDENTIALPARDONFORM_HPP
 #define PRESIDENTIALPARDONFORM_HPP
 
+#include "colors.hpp"
 #include "Form.hpp"
 
 #include <stdlib.h>

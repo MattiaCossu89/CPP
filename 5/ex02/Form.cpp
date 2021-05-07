@@ -60,6 +60,6 @@ void		Form::checkBureaucratExec(Bureaucrat const & executor) const
 
 std::ostream &operator<<(std::ostream &os, const Form& form)
 {
-	os << form.getName() << ", Form grade " << form.getGradeSign() << " " << form.getGradeExec() << (form.isSigned() ? " is signed" : " is open");
+		os << YELLOW << form.getName() << NRM ", Form grade " GREEN << form.getGradeSign() << NRM " " BLUE << form.getGradeExec() << (form.isSigned() ? RED " is signed" NRM : GREEN " is open" NRM);
 	return (os);
 }
