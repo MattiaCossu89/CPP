@@ -40,7 +40,7 @@ class ShrubberyCreationForm : public Form
 		};
 		static bool first;
 		static str_t trees[4];
-		static void createShrubberyTrees();
+		static void createShrubberyTrees(std::ostream &os);
 	public:
 		ShrubberyCreationForm(const str_t &target);
 		// ShrubberyCreationForm(str_t target);

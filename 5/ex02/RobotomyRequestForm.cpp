@@ -23,15 +23,6 @@ RobotomyRequestForm::RobotomyRequestForm(const str_t &target) : Form(target, 72,
 	}
 }
 
-// RobotomyRequestForm::RobotomyRequestForm(str_t target) : Form(target, 72, 45)
-// {
-// 	if (first)
-// 	{
-// 		srand(time(NULL));
-// 		first = false;
-// 	}
-// }
-
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : Form(copy)
 {
 
@@ -58,7 +49,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 		usleep(100000);
 	}
 	if (rand() % 2)
-		std::cout << getName() << " has been robotomized successfully!" << std::endl;
+		std::cout << YELLOW << getName() << NRM " has been" GREEN " robotomized successfully!" NRM << std::endl;
 	else
-		std::cout << getName() << " robotomization failed!" << std::endl;
+		std::cout << YELLOW << getName() << RED " robotomization failed!" NRM << std::endl;
 }
