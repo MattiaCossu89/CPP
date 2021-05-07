@@ -14,8 +14,6 @@
 
 bool ShrubberyCreationForm::first = true;
 
-str_t ShrubberyCreationForm::trees[4];
-
 void ShrubberyCreationForm::createShrubberyTrees(std::ostream &os)
 {
 	switch (rand() % 4)
