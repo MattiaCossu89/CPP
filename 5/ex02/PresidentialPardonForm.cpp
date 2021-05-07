@@ -10,3 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PresidentialPardonForm.hpp"
+
+bool PresidentialPardonForm::first = true;
+
+PresidentialPardonForm::PresidentialPardonForm(const str_t &target) : Form(target, 25, 5)
+{
+
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : Form(copy)
+{
+
+}
+
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+
+}
+
+PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPardonForm &copy)
+{
+	this->~PresidentialPardonForm();
+	new (this) PresidentialPardonForm(copy);
+	return (*this);
+}
+
+void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	this->checkBureaucratExec(executor);
+	std::cout << getName() << "has been pardoned by Zafod Beeblebrox" << std::endl;
+}
