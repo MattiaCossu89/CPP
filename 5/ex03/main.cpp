@@ -12,83 +12,69 @@
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+
+void	doIT(const Bureaucrat *bur, Form &form)
+{
+	if (!bur)
+	{
+		std::cout << "Inexistent Bureaucrat" << std::endl;
+		return ;
+	}
+	try
+	{
+		bur->signForm(form);
+		form.execute(*bur);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+}
+
+Bureaucrat *createBureaucrat(const std::string &name, int grade)
+{
+	Bureaucrat *tmp;
+	try
+	{
+		tmp = new Bureaucrat(name, grade);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+		delete tmp;
+		return (0);
+	}
+	return tmp;
+}
 
 int main()
 {
 	Bureaucrat *gianni;
 	Bureaucrat *mario;
-	Form *f1, *f2;
-
-	try
-	{
-		gianni = new Bureaucrat("Gianni", 1);
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		mario = new Bureaucrat("Mario", 150);
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		f1 = new ShrubberyCreationForm("F1");
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		f2 = new RobotomyRequestForm("F2");
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << *gianni << std::endl;
-	std::cout << *mario << std::endl;
-	gianni->decGrade();
-	mario->incGrade();
-	std::cout << *f1 << std::endl;
-	std::cout << *f2 << std::endl;
-	gianni->signForm(*f1);
-	mario->signForm(*f2);
-	std::cout << *f1 << std::endl;
-	std::cout << *f2 << std::endl;
-	f1->execute(*gianni);
-	f2->execute(*gianni);
-	PresidentialPardonForm f3("Mike");
-	RobotomyRequestForm f4("Mark");
-	RobotomyRequestForm f5("Giusy");
-	ShrubberyCreationForm f6("Beauty");
-	ShrubberyCreationForm f7("Jim");
-	gianni->signForm(f3);
-	gianni->signForm(f4);
-	gianni->signForm(f5);
-	gianni->signForm(f6);
-	gianni->signForm(f7);
-	f3.execute(*gianni);
-	f4.execute(*gianni);
-	f5.execute(*gianni);
-	f6.execute(*gianni);
-	f7.execute(*gianni);
-	try {
-		f7.execute(*mario);
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	Intern intern;
+	Form *forms[5];
+	gianni = createBureaucrat("Gianni", 1);
+	mario = createBureaucrat("Mario", 120);
+	forms[0] = intern.makeForm("shrubbery", "Trees");
+	forms[1] = intern.makeForm("shrubbery create", "Beauty");
+	forms[2] = intern.makeForm("presidential pardon", "Mike");
+	forms[3] = intern.makeForm("Robotomy Request", "Fool");
+	forms[4] = intern.makeForm("robotomy request", "Jim");
+	doIT(gianni, *(forms[0]));
+	doIT(gianni, *(forms[1]));
+	doIT(gianni, *(forms[2]));
+	doIT(gianni, *(forms[3]));
+	doIT(gianni, *(forms[4]));
+	doIT(mario, *(forms[0]));
+	doIT(mario, *(forms[1]));
+	doIT(mario, *(forms[2]));
+	doIT(mario, *(forms[3]));
+	doIT(mario, *(forms[4]));
 	delete gianni;
 	delete mario;
-	delete f1;
-	delete f2;
 }

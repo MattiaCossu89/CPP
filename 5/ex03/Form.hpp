@@ -44,6 +44,13 @@ class Form
 				return "Grade to apply the form too low";
 			}
 		};
+		class GradeToExecTooLowException : public std::exception
+		{
+			virtual const char* what() const throw()
+			{
+				return "Grade to exec the form too low";
+			}
+		};
 		Form(const str_t &name, int gradeSign, int gradeExec);
 		Form(const Form &copy);
 		virtual ~Form();

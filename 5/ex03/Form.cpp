@@ -54,7 +54,7 @@ void		Form::beSigned(const Bureaucrat &bur)
 void		Form::checkBureaucratExec(Bureaucrat const & executor) const
 {
 	if (executor.getGrade() > _gradeExec)
-		throw GradeTooLowException();
+		throw GradeToExecTooLowException();
 }
 
 

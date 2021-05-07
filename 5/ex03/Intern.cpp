@@ -39,4 +39,5 @@ Form *Intern::makeForm(const std::string &f_name, const std::string &target) con
 			return (map[i].met(target));
 		}
 	std::cout << f_name << " Form doesn't exists" << std::endl;
+	return (0);
 }
