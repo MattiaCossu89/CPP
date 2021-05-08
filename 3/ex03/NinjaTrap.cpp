@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:59 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 12:25:31 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 12:48:24 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	NinjaTrap::beRepaired(UI amount)
 {
 	this->ClapTrap::beRepaired(amount);
 
-	std::cout << "NJ4_TP \033[32m" << this->getName() << "\033[0m si mangia un uramaki e recupera " << "\033[32m" << amount << "\033[0m HP!" << std::endl;
 	std::cout << "NJ4_TP \033[32m" << this->getName() << "\033[0m si mangia un uramaki e recupera " << "\033[32m" << amount << "\033[0m HP!" << std::endl;
 }
 
