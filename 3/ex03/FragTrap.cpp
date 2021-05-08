@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:16 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 16:36:52 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 13:09:05 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void	FragTrap::takeDamage(UI amount)
 
 void	FragTrap::beRepaired(UI amount)
 {
-	this->ClapTrap::beRepaired(amount);
+	if (this->ClapTrap::beRepaired(amount))
+		std::cout <<
 	std::cout << "FR4G_TP \033[32m" << this->getName() << "\033[0m si fa un sonnellino repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
 }
 

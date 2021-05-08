@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:22 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 17:05:15 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 12:58:40 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ScavTrap.hpp"
 
 typedef void (FragTrap::*fun)(str const &) const;
+typedef void (ScavTrap::*fun_s)(str const &) const;
 
 int main()
 {
@@ -21,7 +22,9 @@ int main()
 
 	FragTrap frags[10];
 	fun f[2] = { &FragTrap::meleeAttack, &FragTrap::rangedAttack };
+	fun_s f1[2] = { &ScavTrap::meleeAttack, &ScavTrap::rangedAttack };
 	fun f_;
+	fun_s fs_;
 	int temp;
 	for (int i = 0; i < 10; i++)
 	{
@@ -30,4 +33,15 @@ int main()
 	}
 	for (int i = 0; i < 10; i++)
 		frags[i].vaulthunter_dot_exe(frags[(temp = rand() % 10) != i ? temp : (temp + 1) % 10].getName());
+
+	std::cout << std::endl << std::endl << std::endl << std::endl << "\033[33mE' il turno degli ScavTraps!!\033[0m" << std::endl;
+	ScavTrap scav[3];
+	for (int i = 0; i < 6; i++)
+	{
+		fs_ = f1[rand() % 2];
+		(scav[i % 3].*fs_)(frags[(temp = rand() % 10) != i ? temp : (temp + 1) % 10].getName());
+	}
+	for (int i = 0; i < 10; i++)
+		scav[i % 3].challengeNewcomer(frags[(temp = rand() % 10) != i ? temp : (temp + 1) % 10].getName());
+
 }

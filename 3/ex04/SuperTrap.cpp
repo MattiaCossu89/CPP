@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:30:44 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 12:53:19 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 13:10:34 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,8 @@ void	SuperTrap::takeDamage(UI amount)
 
 void	SuperTrap::beRepaired(UI amount)
 {
-	this->ClapTrap::beRepaired(amount);
-
-	std::cout << "SUP_TP \033[32m" << this->getName() << "\033[0m si ricarica di " << "\033[32m" << amount << "\033[0m points!" << std::endl;
+	if (this->ClapTrap::beRepaired(amount))
+		std::cout << "SUP_TP \033[32m" << this->getName() << "\033[0m si ricarica di " << "\033[32m" << amount << "\033[0m points!" << std::endl;
 }
 
 void	SuperTrap::ninjaShoebox(SuperTrap &target)

@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:59 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 12:50:14 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 13:10:38 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,8 @@ void	NinjaTrap::takeDamage(UI amount)
 
 void	NinjaTrap::beRepaired(UI amount)
 {
-	this->ClapTrap::beRepaired(amount);
-
-	std::cout << "NJ4_TP \033[32m" << this->getName() << "\033[0m si mangia un uramaki e recupera " << "\033[32m" << amount << "\033[0m HP!" << std::endl;
+	if (this->ClapTrap::beRepaired(amount))
+		std::cout << "NJ4_TP \033[32m" << this->getName() << "\033[0m si mangia un uramaki e recupera " << "\033[32m" << amount << "\033[0m HP!" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(FragTrap &target)

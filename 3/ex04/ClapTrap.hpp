@@ -6,11 +6,13 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:54 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 16:26:36 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 13:13:09 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+#include "colors.hpp"
 
 #include <string>
 #include <iostream>

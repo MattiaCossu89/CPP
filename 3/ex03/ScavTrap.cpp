@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:20:09 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 11:49:46 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 13:09:15 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ScavTrap::~ScavTrap()
 
 void	ScavTrap::rangedAttack(ClapTrap &target) const
 {
-	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m lancia lattine di birra.. contro \033[31m" << target.getName() << ".. Piene.. che spreco \033[0m (range), causing " << this->getRangedDmg() << " points of damage!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m lancia lattine di birra.. contro \033[31m" << target.getName() << " \033[0m.. Piene.. che spreco (range), causing " << this->getRangedDmg() << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::meleeAttack(ClapTrap &target) const
@@ -63,9 +63,8 @@ void	ScavTrap::takeDamage(UI amount)
 
 void	ScavTrap::beRepaired(UI amount)
 {
-	this->ClapTrap::beRepaired(amount);
-
-	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m va in letargo (restore " << "\033[32m" << amount << "\033[0m life points!)" << std::endl;
+	if (this->ClapTrap::beRepaired(amount))
+		std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m va in letargo (restore " << "\033[32m" << amount << "\033[0m life points!)" << std::endl;
 }
 
 
@@ -76,6 +75,6 @@ void	ScavTrap::challengeNewcomer(ClapTrap &target)
 		std::cout << this->getName() << " has no more energy for challenging anyone" << std::endl;
 		return ;
 	}
-	std::cout << "SC4V_TP " << this->getName() << " " << challenges[rand() % NVDE] << " VS " << target.getName() << std::endl;
+	std::cout << "SC4V_TP " GREEN << this->getName() << NRM " " << challenges[rand() % NVDE] << " VS " RED << target.getName() << NRM << std::endl;
 }
 

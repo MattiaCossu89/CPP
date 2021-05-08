@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:54 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 16:25:38 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 13:07:10 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #define NS 2
 #define NMB 1
 #define NMD 1
+
+#include "colors.hpp"
 
 #include <string>
 #include <iostream>
