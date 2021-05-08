@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 typedef void (FragTrap::*fun)(ClapTrap &) const;
 
@@ -23,8 +24,8 @@ int main()
 	for (int i = 0; i < 10; i++)
 	{
 		f_ = f[rand() % 2];
-		(frags[i].*f_)(frags[(temp = rand() % 10) != i ? temp : (temp + 1) % 10].getName());
+		(frags[i].*f_)(frags[(temp = rand() % 10) != i ? temp : (temp + 1) % 10]);
 	}
 	for (int i = 0; i < 10; i++)
-		frags[i].vaulthunter_dot_exe(frags[(temp = rand() % 10) != i ? temp : (temp + 1) % 10].getName());
+		frags[i].vaulthunter_dot_exe(frags[(temp = rand() % 10) != i ? temp : (temp + 1) % 10]);
 }

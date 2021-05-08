@@ -39,17 +39,17 @@ FragTrap &FragTrap::operator=(const FragTrap &cpy)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FR4G_TP \033[31m" << this->getName() << "\033[0m Destroyed"<< std::endl;
+	std::cout << "BUUUUUUUMMMMM! FR4G_TP \033[31m" << this->getName() << "\033[0m Destroyed"<< std::endl;
 }
 
 void	FragTrap::rangedAttack(ClapTrap &target) const
 {
-	std::cout << "FR4G_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m at range, causing " << this->getRangedDmg() << " points of damage!" << std::endl;
+	std::cout << "FR4G_TP \033[32m" << this->getName() << "\033[0m tira un sacco di bulloni a \033[31m" << target.getName() << "\033[0m (range), causing " << this->getRangedDmg() << " points of damage!" << std::endl;
 }
 
 void	FragTrap::meleeAttack(ClapTrap &target) const
 {
-	std::cout << "FR4G_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m with melee attack, causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
+	std::cout << "FR4G_TP \033[32m" << this->getName() << "\033[0m sfodera la sua MACHECA..NESO contro \033[31m" << target.getName() << "\033[0m (melee), causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
 }
 
 str		FragTrap::identify() const
@@ -62,11 +62,12 @@ void	FragTrap::vaulthunter_dot_exe(ClapTrap &target)
 	vde att;
 	if (!this->useEnergy(25))
 	{
-		std::cout << this->getName() << " has no more energy" << std::endl;
+		std::cout << this->getName() << " ha finito le cartucce" << std::endl;
 		return ;
 	}
 	att = vde_attacks[rand() % NVDE];
 	std::cout << "FR4G_TP " << this->getName() << " " << att.message << " VS " << target.getName() << " causing " << att.dmg << " damages" << std::endl;
+	target.takeDamage(att.dmg);
 }
 
 

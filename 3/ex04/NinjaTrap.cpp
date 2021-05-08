@@ -40,12 +40,12 @@ NinjaTrap::~NinjaTrap()
 
 void	NinjaTrap::rangedAttack(ClapTrap &target) const
 {
-	std::cout << this->identify() << " \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m at range, causing " << this->getRangedDmg() << " points of damage!" << std::endl;
+	std::cout << this->identify() << " \033[32m" << this->getName() << "\033[0m  tira un sacco di bulloni a \033[31m" << target.getName() << "\033[0m (range), causing " << this->getRangedDmg() << " points of damage!" << std::endl;
 }
 
 void	NinjaTrap::meleeAttack(ClapTrap &target) const
 {
-	std::cout << this->identify() << " \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m with melee attack, causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
+	std::cout << this->identify() << " \033[32m" << this->getName() << "\033[0m sfodera la sua MACHECA..NESO contro \033[31m" << target.getName() << "\033[0m (melee), causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
 }
 
 str		NinjaTrap::identify() const

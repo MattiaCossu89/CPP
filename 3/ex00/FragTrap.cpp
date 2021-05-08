@@ -23,7 +23,7 @@ const str	FragTrap::messBorn[NMB] = { "is born!" };
 const str	FragTrap::messDestroy[NMD] = { "is destroyed!" };
 
 const vde	FragTrap::vde_attacks[NVDE] = { {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30} };
-// const vde	FragTrap::vde_attacks[NVDE] = { {"", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30} };
+// const vde	FragTrap::vde_attacks[NVDE] = { {"use his ", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30} };
 
 bool		FragTrap::first = true;
 
@@ -135,7 +135,7 @@ void	FragTrap::beRepaired(UI amount)
 {
 	if (life + amount > maxlife) { life = maxlife; amount = maxlife - life;}
 	else life += amount;
-	std::cout << "FR4G_TP \033[32m" << name << "\033[0m repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
+	std::cout << "FR4G_TP \033[32m" << name << "\033[0m si fa un sonnellino repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
 }
 
 str		FragTrap::getName()

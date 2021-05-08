@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "ScavTrap.hpp"
 
 typedef void (FragTrap::*fun)(ClapTrap &) const;
 
