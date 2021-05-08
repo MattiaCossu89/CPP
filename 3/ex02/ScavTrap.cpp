@@ -12,7 +12,7 @@
 
 #include "ScavTrap.hpp"
 
-const str	ScavTrap::challenges[NVDE] = { "hi man", "hi man", "hi man", "hi man", "hi man" };
+const str	ScavTrap::challenges[NVDE] = { "indovina?", "non hai idea di che brutta situazione sia questa", "tira un dado a sei facce se fai 7 vinci", "chiama la sfinge che è più preparata di lui", "sta volta non ha voglia di fare nessuna challenge" };
 
 ScavTrap::ScavTrap() : ClapTrap(100, 100, 50, 50, 1, 20, 15, 3)
 {
