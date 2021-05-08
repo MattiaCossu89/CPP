@@ -20,7 +20,6 @@ void	incInt(int &num)
 template<class T>
 void iter(Array<T> &ar, void (*fun)(T&))
 {
-	std::cout << RED << ar.size() << NRM << std::endl;
 	for (UI i = 0; i < ar.size(); i++)
 		(*fun)(ar[i]);
 }
