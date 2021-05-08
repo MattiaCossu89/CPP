@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:37 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 16:36:48 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 11:49:51 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ const str	ScavTrap::challenges[NVDE] = { "indovina?", "non hai idea di che brutt
 
 ScavTrap::ScavTrap() : ClapTrap(100, 100, 50, 50, 1, 20, 15, 3)
 {
-	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m is Born!!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m e' giunto sulla terra" << std::endl;
 }
 
 ScavTrap::ScavTrap(const str &name_) : ClapTrap(name_, 100, 100, 50, 50, 1, 20, 15, 3)
 {
-	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m " << "is Born!!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m " << "e' giunto sulla terra" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &cpy) : ClapTrap(cpy)
@@ -37,17 +37,17 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &cpy)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "SC4V_TP \033[31m" << this->getName() << "\033[0m Destroyed"<< std::endl;
+	std::cout << "SC4V_TP \033[31m" << this->getName() << "\033[0m Esplode in mille pezzi"<< std::endl;
 }
 
 void	ScavTrap::rangedAttack(ClapTrap &target) const
 {
-	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m at range, causing " << this->getRangedDmg() << " points of damage!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m lancia lattine di birra.. contro \033[31m" << target.getName() << ".. Piene.. che spreco \033[0m (range), causing " << this->getRangedDmg() << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::meleeAttack(ClapTrap &target) const
 {
-	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m attacks \033[31m" << target.getName() << "\033[0m with melee attack, causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m usa Pugno del Serpente Ubriaco (eggia' i serpenti non hanno le mani) contro \033[31m" << target.getName() << "\033[0m (melee), causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
 }
 
 str		ScavTrap::identify() const
@@ -65,7 +65,7 @@ void	ScavTrap::beRepaired(UI amount)
 {
 	this->ClapTrap::beRepaired(amount);
 
-	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << this->getName() << "\033[0m va in letargo (restore " << "\033[32m" << amount << "\033[0m life points!)" << std::endl;
 }
 
 

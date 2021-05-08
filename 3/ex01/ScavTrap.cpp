@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:08 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 17:20:01 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 11:41:23 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	ScavTrap::challengeNewcomer(str const &target)
 {
 	if (mc2 < 25)
 	{
-		std::cout << name << " has no more energy" << std::endl;
+		std::cout << name << " ha finito le batterie" << std::endl;
 		return ;
 	}
 	mc2 -= 25;
