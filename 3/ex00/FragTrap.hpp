@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:19 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 14:59:27 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 15:05:11 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 #include <string>
 #include <iostream>
 
-#define std::string std::string
 class FragTrap
 {
 	private:
