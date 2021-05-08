@@ -22,7 +22,7 @@ const str	FragTrap::messBorn[NMB] = { "is born!" };
 
 const str	FragTrap::messDestroy[NMD] = { "is destroyed!" };
 
-const vde	FragTrap::vde_attacks[NVDE] = { {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30} };
+const vde	FragTrap::vde_attacks[NVDE] = { {"spacca una bottiglia e tagliuzza un po tutti", 30}, {"spara con una pistola ad acqua TERRIBILE!!", 70}, {"chiede che senso ha tutto questo.. domanda troppo difficile!!", 50}, {"EMMOHBBASTA", 10}, {"manda qualche porco stile veneto verso", 20} };
 
 bool		FragTrap::first = true;
 
@@ -96,12 +96,12 @@ FragTrap::~FragTrap()
 
 void	FragTrap::rangedAttack(str const &target) const
 {
-	std::cout << "FR4G_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m at range, causing " << rangedDmg << " points of damage!" << std::endl;
+	std::cout << "FR4G_TP \033[32m" << name << "\033[0m tira un sacco di bulloni a \033[31m" << target << "\033[0m at range, causing " << rangedDmg << " points of damage!" << std::endl;
 }
 
 void	FragTrap::meleeAttack(str const &target) const
 {
-	std::cout << "FR4G_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m with melee attack, causing " << meleeDmg << " points of damage!" << std::endl;
+	std::cout << "FR4G_TP \033[32m" << name << "\033[0m sfodera la sua MACHECA..NESO contro \033[31m" << target << "\033[0m with melee attack, causing " << meleeDmg << " points of damage!" << std::endl;
 }
 
 void	FragTrap::vaulthunter_dot_exe(str const &target)

@@ -14,7 +14,7 @@
 
 #define vde FragTrap::t_vde
 
-const vde	FragTrap::vde_attacks[NVDE] = { {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30}, {"hi man", 30} };
+const vde	FragTrap::vde_attacks[NVDE] = { {"spacca una bottiglia e tagliuzza un po tutti", 30}, {"spara con una pistola ad acqua TERRIBILE!!", 70}, {"chiede che senso ha tutto questo.. domanda troppo difficile!!", 50}, {"EMMOHBBASTA", 10}, {"manda qualche porco stile veneto verso", 20} };
 
 FragTrap::FragTrap() : ClapTrap(100, 100, 100, 100, 1, 30, 20, 5)
 {
