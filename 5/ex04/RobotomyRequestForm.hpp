@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 17:15:35 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 19:15:10 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 11:06:13 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class RobotomyRequestForm : public Form
 		static bool first;
 	public:
 		RobotomyRequestForm(const str_t &target);
-		// RobotomyRequestForm(str_t target);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
 		~RobotomyRequestForm();
 		RobotomyRequestForm	&operator=(const RobotomyRequestForm &copy);

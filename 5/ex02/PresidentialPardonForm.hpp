@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 17:15:30 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 17:15:30 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 11:06:48 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm();
 	public:
 		PresidentialPardonForm(const std::string &target);
-		// PresidentialPardonForm(str_t target);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
 		~PresidentialPardonForm();
 		PresidentialPardonForm	&operator=(const PresidentialPardonForm &copy);
