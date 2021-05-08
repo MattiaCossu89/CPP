@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:59 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 12:48:24 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 12:50:14 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	NinjaTrap::ninjaShoebox(FragTrap &target)
 		std::cout << this->getName() << " e' stanco di combattere" << std::endl;
 		return ;
 	}
-	std::cout << "NJ4_TP " << this->getName() << " RASENGANNNNN" << " VS " << target.getName() << std::endl;
+	std::cout << this->identify() << this->getName() << " RASENGANNNNN" << " VS " << target.getName() << std::endl;
 	target.takeDamage(60);
 }
 
@@ -84,7 +84,7 @@ void	NinjaTrap::ninjaShoebox(ScavTrap &target)
 		std::cout << this->getName() << " e' stanco di combattere" << std::endl;
 		return ;
 	}
-	std::cout << "NJ4_TP " << this->getName() << " lancia BALLA DI FUOCO SUPREMA" << " VS " << target.getName() << std::endl;
+	std::cout << this->identify() << this->getName() << " lancia BALLA DI FUOCO SUPREMA" << " VS " << target.getName() << std::endl;
 	target.takeDamage(60);
 }
 
@@ -95,6 +95,6 @@ void	NinjaTrap::ninjaShoebox(NinjaTrap &target)
 		std::cout << this->getName() << " e' stanco di combattere" << std::endl;
 		return ;
 	}
-	std::cout << "NJ4_TP " << this->getName() << " SASKEEE!! NARUTOOOO!! SASKEEEEEE!!!! NARUTOOOOOOO!! " << " VS " << target.getName() << std::endl;
+	std::cout << this->identify() << this->getName() << " SASKEEE!! NARUTOOOO!! SASKEEEEEE!!!! NARUTOOOOOOO!! " << " VS " << target.getName() << std::endl;
 	target.takeDamage(60);
 }
