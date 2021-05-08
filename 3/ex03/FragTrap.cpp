@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:16 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 14:58:37 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 15:19:38 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	FragTrap::rangedAttack(ClapTrap &target) const
 void	FragTrap::meleeAttack(ClapTrap &target) const
 {
 	UI dmg = this->ClapTrap::getMeleeDmg();
-	std::cout << "FR4G_TP \033[32m" << this->getName() << "\033[0m sfodera la sua MACHECA..NESO contro \033[31m" << target.getName() << "\033[0m (melee), causing " << this->getMeleeDmg() << " points of damage!" << std::endl;
+	std::cout << "FR4G_TP \033[32m" << this->getName() << "\033[0m sfodera la sua MACHECA..NESO contro \033[31m" << target.getName() << "\033[0m (melee), causing ";
 	target.takeDamage(dmg);
 }
 

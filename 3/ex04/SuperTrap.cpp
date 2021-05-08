@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:30:44 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 14:59:38 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 15:15:49 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,19 @@ void	SuperTrap::ninjaShoebox(SuperTrap &target)
 	}
 	std::cout << "SUP_TP " GREEN << this->getName() << NRM " " << " VS " RED << target.getName() << NRM << " causing ";
 	target.takeDamage(dmg);
+}
+
+void	SuperTrap::ninjaShoebox(NinjaTrap &target)
+{
+	this->NinjaTrap::ninjaShoebox(target);
+}
+
+void	SuperTrap::ninjaShoebox(FragTrap &target)
+{
+	this->NinjaTrap::ninjaShoebox(target);
+}
+
+void	SuperTrap::ninjaShoebox(ScavTrap &target)
+{
+	this->NinjaTrap::ninjaShoebox(target);
 }
