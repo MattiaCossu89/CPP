@@ -6,15 +6,15 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:22 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 12:58:40 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 15:47:10 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-typedef void (FragTrap::*fun)(str const &) const;
-typedef void (ScavTrap::*fun_s)(str const &) const;
+typedef void (FragTrap::*fun)(std::string const &) const;
+typedef void (ScavTrap::*fun_s)(std::string const &) const;
 
 int main()
 {
