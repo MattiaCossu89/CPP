@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:08 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 11:41:23 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 11:53:28 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,17 +89,17 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &cpy)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "SC4V_TP \033[31m" << name << "\033[0m " << randDestroyMessage() << std::endl;
+	std::cout << "SC4V_TP \033[31m" << name << "\033[0m Esplode in mille pezzi"<< std::endl;
 }
 
 void	ScavTrap::rangedAttack(str const &target) const
 {
-	std::cout << "SC4V_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m at range, causing " << rangedDmg << " points of damage!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << name << "\033[0m lancia lattine di birra.. contro \033[31m" << target << "\033[0m (range), causing " << rangedDmg << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::meleeAttack(str const &target) const
 {
-	std::cout << "SC4V_TP \033[32m" << name << "\033[0m attacks \033[31m" << target << "\033[0m with melee attack, causing " << meleeDmg << " points of damage!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << name << "\033[0m usa Pugno del Serpente Ubriaco (eggia' i serpenti non hanno le mani) contro \033[31m" << target << "\033[0m (melee), causing " << meleeDmg << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::challengeNewcomer(str const &target)
@@ -130,7 +130,7 @@ void	ScavTrap::beRepaired(UI amount)
 {
 	if (life + amount > maxlife) { life = maxlife; amount = maxlife - life;}
 	else life += amount;
-	std::cout << "SC4V_TP \033[32m" << name << "\033[0m repairs himself of " << "\033[32m" << amount << "\033[0m points!" << std::endl;
+	std::cout << "SC4V_TP \033[32m" << name << "\033[0m va in letargo (restore " << "\033[32m" << amount << "\033[0m life points!)" << std::endl;
 }
 
 str		ScavTrap::getName()
