@@ -6,25 +6,25 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:08 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 11:53:28 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 14:58:53 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-const str	ScavTrap::names[NN] = { "B00B13-TP", "B34I2-TP", "D3TH-TP", "H0U5E-TP", "T4CO-TP", "N4P-TP", "F4P-TP", "S14P-TP", "M0U5-TP", "J0XS-TP", "IT54-TP" };
+const std::string	ScavTrap::names[NN] = { "B00B13-TP", "B34I2-TP", "D3TH-TP", "H0U5E-TP", "T4CO-TP", "N4P-TP", "F4P-TP", "S14P-TP", "M0U5-TP", "J0XS-TP", "IT54-TP" };
 
-const str	ScavTrap::surNames[NS] = { "il Bello", "il Brutto" };
+const std::string	ScavTrap::surNames[NS] = { "il Bello", "il Brutto" };
 
-const str	ScavTrap::messBorn[NMB] = { "is born!" };
+const std::string	ScavTrap::messBorn[NMB] = { "is born!" };
 
-const str	ScavTrap::messDestroy[NMD] = { "is destroyed!" };
+const std::string	ScavTrap::messDestroy[NMD] = { "is destroyed!" };
 
-const str	ScavTrap::challenges[NVDE] = { "indovina?", "non hai idea di che brutta situazione sia questa", "tira un dado a sei facce se fai 7 vinci", "chiama la sfinge che è più preparata di lui", "sta volta non ha voglia di fare nessuna challenge" };
+const std::string	ScavTrap::challenges[NVDE] = { "indovina?", "non hai idea di che brutta situazione sia questa", "tira un dado a sei facce se fai 7 vinci", "chiama la sfinge che è più preparata di lui", "sta volta non ha voglia di fare nessuna challenge" };
 
 bool		ScavTrap::first = true;
 
-const str	ScavTrap::randName()
+const std::string	ScavTrap::randName()
 {
 	if (first)
 	{
@@ -34,7 +34,7 @@ const str	ScavTrap::randName()
 	return (names[rand() % NN]);
 }
 
-const str	&ScavTrap::randBornMessage()
+const std::string	&ScavTrap::randBornMessage()
 {
 	if (first)
 	{
@@ -44,7 +44,7 @@ const str	&ScavTrap::randBornMessage()
 	return (messBorn[rand() % NMB]);
 }
 
-const str	&ScavTrap::randDestroyMessage()
+const std::string	&ScavTrap::randDestroyMessage()
 {
 	if (first)
 	{
@@ -59,7 +59,7 @@ ScavTrap::ScavTrap() : name(randName()), life(100), maxlife(100), mc2(50), maxmc
 	std::cout << "SC4V_TP \033[32m" << name << "\033[0m " << randBornMessage() << std::endl;
 }
 
-ScavTrap::ScavTrap(const str &name_) : name(name_), life(100), maxlife(100), mc2(50), maxmc2(50), level(1), meleeDmg(20), rangedDmg(15), armor(3)
+ScavTrap::ScavTrap(const std::string &name_) : name(name_), life(100), maxlife(100), mc2(50), maxmc2(50), level(1), meleeDmg(20), rangedDmg(15), armor(3)
 {
 	(void)level;
 	(void)mc2;
@@ -92,17 +92,17 @@ ScavTrap::~ScavTrap()
 	std::cout << "SC4V_TP \033[31m" << name << "\033[0m Esplode in mille pezzi"<< std::endl;
 }
 
-void	ScavTrap::rangedAttack(str const &target) const
+void	ScavTrap::rangedAttack(std::string const &target) const
 {
 	std::cout << "SC4V_TP \033[32m" << name << "\033[0m lancia lattine di birra.. contro \033[31m" << target << "\033[0m (range), causing " << rangedDmg << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::meleeAttack(str const &target) const
+void	ScavTrap::meleeAttack(std::string const &target) const
 {
 	std::cout << "SC4V_TP \033[32m" << name << "\033[0m usa Pugno del Serpente Ubriaco (eggia' i serpenti non hanno le mani) contro \033[31m" << target << "\033[0m (melee), causing " << meleeDmg << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::challengeNewcomer(str const &target)
+void	ScavTrap::challengeNewcomer(std::string const &target)
 {
 	if (mc2 < 25)
 	{
@@ -119,21 +119,20 @@ void	ScavTrap::challengeNewcomer(str const &target)
 }
 
 
-void	ScavTrap::takeDamage(UI amount)
+int	ScavTrap::takeDamage(UI &amount)
 {
 	if (amount - armor > life && (amount = life)) life = 0;
 	else life -= amount - armor;
 	std::cout << "SC4V_TP \033[31m" << name << "\033[0m take " << (life ? "\033[33m" : "\033[31m") << amount << "\033[0m points of damage!" << std::endl;
 }
 
-void	ScavTrap::beRepaired(UI amount)
+int	ScavTrap::beRepaired(UI &amount)
 {
 	if (life + amount > maxlife) { life = maxlife; amount = maxlife - life;}
 	else life += amount;
 	std::cout << "SC4V_TP \033[32m" << name << "\033[0m va in letargo (restore " << "\033[32m" << amount << "\033[0m life points!)" << std::endl;
 }
-
-str		ScavTrap::getName()
+std::string		ScavTrap::getName()
 {
 	return (name);
 }

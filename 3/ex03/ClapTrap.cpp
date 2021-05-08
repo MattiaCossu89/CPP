@@ -6,22 +6,28 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:50 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/03 17:14:33 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/08 15:03:23 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-const str	ClapTrap::names[NN] = { "B00B13-TP", "B34I2-TP", "D3TH-TP", "H0U5E-TP", "T4CO-TP", "N4P-TP", "F4P-TP", "S14P-TP", "M0U5-TP", "J0XS-TP", "IT54-TP" };
+const std::string	ClapTrap::names[NN] = { "B00B13-TP", "B34I2-TP", "D3TH-TP", "H0U5E-TP", "T4CO-TP", "N4P-TP", "F4P-TP", "S14P-TP", "M0U5-TP", "J0XS-TP", "IT54-TP" };
+
+int			ClapTrap::vers[NN] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
 bool		ClapTrap::first = true;
 
-const str	ClapTrap::randName()
+const std::string	ClapTrap::randName()
 {
-	return (names[rand() % NN]);
+	std::stringstream ss;
+	int i = rand() % NN;
+	ss << names[i] << " v" << vers[i] << ".0";
+	vers[i]++;
+	return (ss.str());
 }
 
-ClapTrap::ClapTrap(const str &name_, UI life_, UI maxlife_, UI mc2_, UI maxmc2_, UI level_, UI meleeDmg_, UI rangedDmg_, UI armor_) :
+ClapTrap::ClapTrap(const std::string &name_, UI life_, UI maxlife_, UI mc2_, UI maxmc2_, UI level_, UI meleeDmg_, UI rangedDmg_, UI armor_) :
 name(name_), life(life_), maxlife(maxlife_), mc2(mc2_), maxmc2(maxmc2_), level(level_), meleeDmg(meleeDmg_), rangedDmg(rangedDmg_), armor(armor_)
 {
 	if (first)
@@ -91,7 +97,7 @@ bool	ClapTrap::useEnergy(UI amount)
 	return (true);
 }
 
-str		ClapTrap::getName() const
+std::string		ClapTrap::getName() const
 {
 	return (name);
 }
