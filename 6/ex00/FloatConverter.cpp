@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FloatConverter.cpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/08 15:42:49 by mcossu            #+#    #+#             */
+/*   Updated: 2021/05/08 15:42:50 by mcossu           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "FloatConverter.hpp"
 
 FloatConverter::FloatConverter(const std::string &num) : Converter(num) {}
