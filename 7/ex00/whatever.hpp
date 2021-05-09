@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:44:11 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 15:44:12 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 17:47:23 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 template<class T>
 void	swap(T &a, T &b)
 {
-	T temp;
-	temp = a;
+	T temp = a;
 	a = b;
 	b = temp;
 }
