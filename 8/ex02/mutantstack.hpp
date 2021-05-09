@@ -101,7 +101,7 @@ class MutantStack : public std::stack<T>
 {
 	public:
 
-		typedef typename ::stack_iterator<T>			iterator;
+		typedef typename ::stack_iterator<T>	iterator;
 		MutantStack();
 		MutantStack(const std::stack<T> &copy);
 		MutantStack(const MutantStack & copy);
