@@ -4,116 +4,149 @@
 #include <deque>
 #include <stack>
 
-template<class T, class Container>
-class __stack_iterator
+template<class T>
+class stack_iterator
 {
 	private:
-		typedef typename Container::reverse_iterator iter;
+		typedef typename std::deque<T>::reverse_iterator iter;
 		iter it;
 	public:
-		__stack_iterator();
-		__stack_iterator(const __stack_iterator &in);
-		__stack_iterator(const iter &in);
-		__stack_iterator &operator=(const __stack_iterator &copy);
-		bool operator==(const __stack_iterator &it) const;
-		bool operator!=(const __stack_iterator &it) const;
-		__stack_iterator &operator++();
-		const __stack_iterator operator++(int);
-		__stack_iterator &operator--();
-		const __stack_iterator operator--(int);
+		stack_iterator();
+		stack_iterator(const stack_iterator &in);
+		stack_iterator(const iter &in);
+		stack_iterator &operator=(const stack_iterator &copy);
+		bool operator==(const stack_iterator &it) const;
+		bool operator!=(const stack_iterator &it) const;
+		stack_iterator &operator++();
+		const stack_iterator operator++(int);
+		stack_iterator &operator--();
+		const stack_iterator operator--(int);
 		T &operator*();
 };
 
-template<class T, class Container>
-__stack_iterator<T, Container>::__stack_iterator()
+template<class T>
+stack_iterator<T>::stack_iterator()
 {
 
 }
 
-template<class T, class Container>
-__stack_iterator<T, Container>::__stack_iterator(const __stack_iterator<T, Container> &in)
+template<class T>
+stack_iterator<T>::stack_iterator(const stack_iterator<T> &in)
 {
 	it = in.it;
 }
 
-template<class T, class Container>
-__stack_iterator<T, Container>::__stack_iterator(const iter &in)
+template<class T>
+stack_iterator<T>::stack_iterator(const iter &in)
 {
 	it = in;
 }
 
-template<class T, class Container>
-__stack_iterator<T, Container> &__stack_iterator<T, Container>::operator=(const __stack_iterator<T, Container> &copy)
+template<class T>
+stack_iterator<T> &stack_iterator<T>::operator=(const stack_iterator<T> &copy)
 {
 	it = copy.it;
 }
 
-template<class T, class Container>
-bool __stack_iterator<T, Container>::operator==(const __stack_iterator<T, Container> &it) const
+template<class T>
+bool stack_iterator<T>::operator==(const stack_iterator<T> &it) const
 {
-	it == it.it;
+	return (this->it == it.it);
 }
 
-template<class T, class Container>
-bool __stack_iterator<T, Container>::operator!=(const __stack_iterator<T, Container> &it) const
+template<class T>
+bool stack_iterator<T>::operator!=(const stack_iterator<T> &it) const
 {
-	it != it.it;
+	return !(this->it == it.it);
 }
 
-template<class T, class Container>
-__stack_iterator<T, Container> &__stack_iterator<T, Container>::operator++()
+template<class T>
+stack_iterator<T> &stack_iterator<T>::operator++()
 {
 	it++;
 	return (*this);
 }
 
-template<class T, class Container>
-const __stack_iterator<T, Container> __stack_iterator<T, Container>::operator++(int)
+template<class T>
+const stack_iterator<T> stack_iterator<T>::operator++(int)
 {
-	__stack_iterator<T, Container> n = *this;
+	stack_iterator<T> n = *this;
 	it++;
 	return (n);
 }
 
-template<class T, class Container>
-__stack_iterator<T, Container> &__stack_iterator<T, Container>::operator--()
+template<class T>
+stack_iterator<T> &stack_iterator<T>::operator--()
 {
 	it--;
 	return (*this);
 }
 
-template<class T, class Container>
-const __stack_iterator<T, Container> __stack_iterator<T, Container>::operator--(int)
+template<class T>
+const stack_iterator<T> stack_iterator<T>::operator--(int)
 {
-	__stack_iterator<T, Container> n = *this;
+	stack_iterator<T> n = *this;
 	it--;
 	return (n);
 }
 
-template<class T, class Container>
-T &__stack_iterator<T, Container>::operator*()
+template<class T>
+T &stack_iterator<T>::operator*()
 {
 	return (*it);
 }
 
-template<class _Tp, class _Container = std::deque<_Tp> >
-class MutantStack : public std::stack<_Tp>
+template<class T>
+class MutantStack : public std::stack<T>
 {
 	public:
-		typedef _Container									container_type;
-		typedef typename container_type::value_type			value_type;
-		typedef typename container_type::reference			reference;
-		typedef typename container_type::const_reference	const_reference;
-		typedef typename container_type::size_type			size_type;
-		typedef __stack_iterator<_Tp, _Container>			iterator;
-		bool begin();
+
+		typedef typename ::stack_iterator<T>			iterator;
+		MutantStack();
+		MutantStack(const std::stack<T> &copy);
+		MutantStack(const MutantStack & copy);
+		MutantStack &operator=(const MutantStack &copy);
+
+		iterator begin();
 		iterator end();
 };
 
-template<class _Tp, class _Container>
-bool MutantStack<_Tp, _Container>::begin()
+template<class T>
+typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
-	return c.rbegin();
+	return this->c.rbegin();
 }
+
+template<class T>
+typename MutantStack<T>::iterator MutantStack<T>::end()
+{
+	return this->c.rend();
+}
+template<class T>
+MutantStack<T>::MutantStack() : std::stack<T>()
+{
+
+}
+
+template<class T>
+MutantStack<T>::MutantStack(const std::stack<T> &copy) : std::stack<T>(copy)
+{
+
+}
+
+template<class T>
+MutantStack<T>::MutantStack(const MutantStack<T> & copy) : std::stack<T>(copy)
+{
+
+}
+
+template<class T>
+MutantStack<T> &MutantStack<T>::operator=(const MutantStack<T> &copy)
+{
+	this->std::stack<T>::operator=(copy);
+	return (*this);
+}
+
+
 
 #endif
