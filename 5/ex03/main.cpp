@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:54:26 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 17:10:12 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 16:31:11 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,6 @@ int main()
 	doIT(mario, *(forms[4]));
 	delete gianni;
 	delete mario;
+	for (int i = 0; i < 5; i++)
+		delete forms[i];
 }
