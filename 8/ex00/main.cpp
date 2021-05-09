@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:03:15 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 16:22:58 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 15:00:40 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ int main()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "not found" << std::endl;
+		std::cout << "10 not found" << std::endl;
 	}
 }
