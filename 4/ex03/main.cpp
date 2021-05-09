@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:06:00 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:06:00 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 16:21:28 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@
 int main()
 {
 	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	Ice *ice = new Ice();
+	Cure *cure = new Cure();
+	src->learnMateria(ice);
+	src->learnMateria(cure);
 	MateriaSource src2 = *(MateriaSource *)src;
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
@@ -36,5 +38,7 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+	delete ice;
+	delete cure;
 	return 0;
 }

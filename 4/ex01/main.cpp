@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:07:33 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:07:33 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 16:15:35 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,9 @@ int main()
 	std::cout << *me;
 	me->attack(b);
 	std::cout << *me;
+	delete me;
+	delete b;
+	delete pr;
+	delete pf;
 	return 0;
 }
