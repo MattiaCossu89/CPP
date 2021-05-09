@@ -11,4 +11,5 @@ int main()
 	for (; it != m.end(); it++)
 		std::cout << *it << " ";
 	std::cout << std::endl;
+	std::stack<int> s(m);
 }

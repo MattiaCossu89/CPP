@@ -147,6 +147,4 @@ MutantStack<T> &MutantStack<T>::operator=(const MutantStack<T> &copy)
 	return (*this);
 }
 
-
-
 #endif
