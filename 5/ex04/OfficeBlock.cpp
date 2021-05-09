@@ -38,6 +38,23 @@ void	OfficeBlock::doBureaucracy(const str_t &name, const str_t &target)
 	form = _intern->makeForm(name, target);
 	if (!form)
 		throw InexistentFormException();
-	_signBureau->signForm(*form);
-	form->execute(*_execBureau);
+	try
+	{
+		_signBureau->signForm(*form);
+	}
+	catch(const std::exception& e)
+	{
+		delete form;
+		throw e;
+	}
+	try
+	{
+		form->execute(*_execBureau);
+	}
+	catch(const std::exception& e)
+	{
+		delete form;
+		throw e;
+	}
+	delete form;
 }

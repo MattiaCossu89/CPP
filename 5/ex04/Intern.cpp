@@ -38,6 +38,6 @@ Form *Intern::makeForm(const std::string &f_name, const std::string &target) con
 			std::cout << "Intern creates " GREEN << f_name << NRM << std::endl;
 			return (map[i].met(target));
 		}
-	std::cout << RED << f_name << NRM " Form doesn't exists" << std::endl;
+	std::cout << RED << f_name << NRM " Form doesn't exist" << std::endl;
 	return (0);
 }
