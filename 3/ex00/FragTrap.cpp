@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/02 14:36:16 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 14:57:03 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 16:08:15 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,7 @@ int	FragTrap::takeDamage(UI &amount)
 	if (amount - armor > life && (amount = life)) life = 0;
 	else life -= amount - armor;
 	std::cout << "FR4G_TP \033[31m" << name << "\033[0m take " << (life ? "\033[33m" : "\033[31m") << amount << "\033[0m points of damage!" << std::endl;
+	return (amount);
 }
 
 int	FragTrap::beRepaired(UI &amount)
@@ -135,6 +136,7 @@ int	FragTrap::beRepaired(UI &amount)
 	if (life + amount > maxlife) { life = maxlife; amount = maxlife - life;}
 	else life += amount;
 	std::cout << "FR4G_TP \033[32m" << name << "\033[0m si fa un sonnellino repairs himself of  " << "\033[32m" << amount << "\033[0m points!" << std::endl;
+	return (amount);
 }
 
 std::string		FragTrap::getName()

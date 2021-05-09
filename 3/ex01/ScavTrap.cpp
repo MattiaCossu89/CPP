@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:19:08 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 14:58:53 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 16:08:26 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,7 @@ int	ScavTrap::takeDamage(UI &amount)
 	if (amount - armor > life && (amount = life)) life = 0;
 	else life -= amount - armor;
 	std::cout << "SC4V_TP \033[31m" << name << "\033[0m take " << (life ? "\033[33m" : "\033[31m") << amount << "\033[0m points of damage!" << std::endl;
+	return (amount);
 }
 
 int	ScavTrap::beRepaired(UI &amount)
@@ -131,6 +132,7 @@ int	ScavTrap::beRepaired(UI &amount)
 	if (life + amount > maxlife) { life = maxlife; amount = maxlife - life;}
 	else life += amount;
 	std::cout << "SC4V_TP \033[32m" << name << "\033[0m va in letargo (restore " << "\033[32m" << amount << "\033[0m life points!)" << std::endl;
+	return (amount);
 }
 std::string		ScavTrap::getName()
 {

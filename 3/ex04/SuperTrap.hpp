@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:30:48 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 15:14:29 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 16:10:06 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class SuperTrap : public virtual FragTrap, public virtual NinjaTrap
 		void	rangedAttack(ClapTrap &target) const;
 		void	meleeAttack(ClapTrap &target) const;
 		virtual std::string		identify() const;
+		void	ninjaShoebox(ClapTrap &target);
 		void	ninjaShoebox(FragTrap &target);
 		void	ninjaShoebox(ScavTrap &target);
 		void	ninjaShoebox(NinjaTrap &target);

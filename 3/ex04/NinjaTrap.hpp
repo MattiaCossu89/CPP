@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:20:01 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 15:14:04 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/09 16:10:06 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@
 
 class NinjaTrap : public virtual ClapTrap
 {
-	private:
-		static const std::string	challenges[NVDE];
 	public:
 		NinjaTrap();
 		NinjaTrap(const std::string &name);
@@ -35,6 +33,7 @@ class NinjaTrap : public virtual ClapTrap
 		virtual void	rangedAttack(ClapTrap &target) const;
 		virtual void	meleeAttack(ClapTrap &target) const;
 		virtual std::string		identify() const;
+		void	ninjaShoebox(ClapTrap &target);
 		void	ninjaShoebox(FragTrap &target);
 		void	ninjaShoebox(ScavTrap &target);
 		void	ninjaShoebox(NinjaTrap &target);
