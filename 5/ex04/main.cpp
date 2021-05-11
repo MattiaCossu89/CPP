@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:54:26 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 17:10:12 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 14:08:45 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,12 @@ int main()
 	ob.setExecutor(hermes);
 	doIT(ob, "mutant pig termination", "Pigley");
 	doIT(ob, "shrubbery", "Hello");
+	doIT(ob, "presidential", "Jim");
+	doIT(ob, "Robotomy", "Mark");
+	for (int i = 0; i < 121; i++)
+		bob.incGrade();
+	for (int i = 0; i < 35; i++)
+		hermes.incGrade();
 	doIT(ob, "presidential", "Jim");
 	doIT(ob, "Robotomy", "Mark");
 }
