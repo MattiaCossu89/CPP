@@ -6,13 +6,32 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:42:27 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 15:42:28 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 16:21:42 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "CharConverter.hpp"
 
-CharConverter::CharConverter(const std::string &num) : Converter(num) {}
+static char narrow_cast(double v)
+{
+	char r = static_cast<char>(v);
+	if (ceil(static_cast<double>(r))!= ceil(v) && floor(static_cast<double>(r))!= floor(v))
+		throw std::exception();
+	return r;
+}
+
+CharConverter::CharConverter(const std::string &num) : Converter(num)
+{
+	invalid = false;
+	try
+	{
+		narrow_cast(_number);
+	}
+	catch(const std::exception& e)
+	{
+		this->invalid = true;
+	}
+}
 
 
 char	CharConverter::getChar() const
@@ -27,6 +46,8 @@ void	CharConverter::displayConversion() const
 		std::cout << "impossible";
 	else if (isinf(_number))
 		std::cout << "impossible";
+	else if (invalid)
+		std::cout << "out of bound";
 	else if (isprint(static_cast<char>(_number)))
 		std::cout << static_cast<char>(_number);
 	else
