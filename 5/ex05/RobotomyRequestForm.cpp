@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 17:15:32 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 17:15:33 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 14:01:32 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,8 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
 	this->checkBureaucratExec(executor);
-	for (int i = 0; i < 10; i++)
-	{
-		std::cout << '\a';
-		usleep(100000);
-	}
+	std::cout << "\a\033[1A" << std::endl;
+	usleep(500000);
 	if (rand() % 2)
 		std::cout << YELLOW << getName() << NRM " has been" GREEN " robotomized successfully!" NRM << std::endl;
 	else
