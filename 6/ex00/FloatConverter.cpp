@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 15:42:49 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/08 15:42:50 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 14:15:40 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	FloatConverter::displayConversion() const
 	else if (isinf(_number))
 		_number < 0 ? std::cout << "-inff" : std::cout << "+inff";
 	else if (static_cast<float>(_number) - floor(static_cast<float>(_number)) > 0)
-		std::cout << static_cast<float>(_number) << "f";
+		std::cout << std::setprecision(10) << static_cast<float>(_number) << "f";
 	else
 		std::cout << static_cast<float>(_number) << ".0f";
 
