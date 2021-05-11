@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:06:00 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/09 16:21:28 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 13:38:02 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ int main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
+	bob->equip(src->createMateria("cure"));
+	bob->equip(src->createMateria("ice"));
 	me->use(0, *bob);
 	me->use(1, *bob);
+	bob->use(1, *me);
+	bob->use(0, *bob);
 	delete bob;
 	delete me;
 	delete src;

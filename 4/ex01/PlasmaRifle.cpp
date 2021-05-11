@@ -6,13 +6,13 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:07:37 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:07:38 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 13:31:49 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21) {}
+PlasmaRifle::PlasmaRifle() : AWeapon(YELLOW "Plasma Rifle" NRM, 5, 21) {}
 
 PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) : AWeapon(copy) {}
 
@@ -28,5 +28,5 @@ PlasmaRifle::~PlasmaRifle() {}
 
 void	PlasmaRifle::attack() const
 {
-	std::cout <<  "* piouuu piouuu piouuu *" << std::endl;
+	std::cout << BLUE "* piouuu piouuu piouuu *" NRM << std::endl;
 }

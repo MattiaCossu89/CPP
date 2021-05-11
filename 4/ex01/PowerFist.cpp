@@ -6,13 +6,13 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:07:44 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:07:44 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 13:30:25 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PowerFist.hpp"
 
-PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50) {}
+PowerFist::PowerFist() : AWeapon(YELLOW "Power Fist" NRM, 8, 50) {}
 
 PowerFist::PowerFist(const PowerFist &copy) : AWeapon(copy) {}
 
@@ -28,5 +28,5 @@ PowerFist::~PowerFist() {}
 
 void	PowerFist::attack() const
 {
-	std::cout << "* pschhh... SBAM! *" << std::endl;
+	std::cout << BLUE "* pschhh... SBAM! *" NRM << std::endl;
 }

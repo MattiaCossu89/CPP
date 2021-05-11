@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:07:33 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/10 13:16:06 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 13:32:40 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 int main()
 {
-	Character* me = new Character("me");
+	Character* me = new Character(GREEN "me" NRM);
 	std::cout << *me;
 	Enemy* b = new RadScorpion();
 	AWeapon* pr = new PlasmaRifle();

@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:08:09 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:08:10 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 13:26:23 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 #include "Slave.hpp"
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
+#include "colors.hpp"
 
 int main()
 {
-	Sorcerer robert("Robert", "the Magnificent");
-	Victim jim("Jimmy");
-	Peon joe("Joe");
-	Slave micky("Micky");
+	Sorcerer robert(GREEN "Robert" NRM, GREEN "the Magnificent" NRM);
+	Victim jim(YELLOW "Jimmy" NRM);
+	Peon joe(RED "Joe" NRM);
+	Slave micky(BLUE "Micky" NRM);
 	Victim *mark_ptr;
-	mark_ptr = new Slave("Mark");
+	mark_ptr = new Slave(BLUE "Mark" NRM);
 	std::cout << robert << jim << joe << micky << *mark_ptr;
 	robert.polymorph(jim);
 	robert.polymorph(joe);

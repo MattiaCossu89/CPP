@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:07:10 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 15:07:11 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 13:30:43 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #define str std::string
 #define o_stream std::ostream
+
+#include "colors.hpp"
 
 #include <iostream>
 #include <string>
