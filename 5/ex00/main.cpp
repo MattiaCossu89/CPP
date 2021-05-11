@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 15:54:26 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/06 17:05:05 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/11 13:42:49 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int main()
 	std::cout << *mario << std::endl;
 	gianni->decGrade();
 	mario->incGrade();
+	std::cout << std::endl << "After decrement Gianni's grade and increment Mario's grade" << std::endl;
 	std::cout << *gianni << std::endl;
 	std::cout << *mario << std::endl;
 	delete gianni;

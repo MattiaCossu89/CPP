@@ -54,6 +54,6 @@ void		Form::beSigned(const Bureaucrat &bur)
 
 std::ostream &operator<<(std::ostream &os, const Form& form)
 {
-	os << YELLOW << form.getName() << NRM ", Form grade " GREEN << form.getGradeSign() << NRM " " BLUE << form.getGradeExec() << (form.isSigned() ? RED " is signed" NRM : GREEN " is open" NRM);
+	os << YELLOW << form.getName() << NRM ", Form grade to sign(" GREEN << form.getGradeSign() << NRM ") to exec (" BLUE << form.getGradeExec() << ")" << (form.isSigned() ? RED " is signed" NRM : GREEN " is open" NRM);
 	return (os);
 }
