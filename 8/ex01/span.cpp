@@ -9,6 +9,8 @@ Span::Span(const Span & copy)
 {
 	_size = copy._size;
 	_capacity = copy._capacity;
+	_max = copy._max;
+	_min = copy._min;
 	_arr = new int[_capacity];
 	for (unsigned int i = 0; i < _size; i++)
 		_arr[i] = copy._arr[i];
@@ -21,6 +23,8 @@ Span &Span::operator=(const Span & copy)
 	if (_arr)
 		delete [] _arr;
 	_size = copy._size;
+	_max = copy._max;
+	_min = copy._min;
 	_capacity = copy._capacity;
 	_arr = new int[_capacity];
 	for (unsigned int i = 0; i < _size; i++)
@@ -60,6 +64,8 @@ unsigned int Span::capacity() const
 
 unsigned int Span::shortestSpan() const
 {
+	if (_size < 2)
+		throw NoSpanFoundException();
 	unsigned int diff = UINT_MAX;
 	long int diff_;
 	for (unsigned int i = 0; i < _size - 1 && diff > 0; i++)
