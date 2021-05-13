@@ -126,7 +126,7 @@ typename MutantStack<T, _Container>::iterator MutantStack<T, _Container>::end()
 	return this->c.rend();
 }
 template<class T, class _Container>
-MutantStack<T, _Container>::MutantStack() : std::stack<T>()
+MutantStack<T, _Container>::MutantStack() : std::stack<T, _Container>()
 {
 
 }
@@ -146,7 +146,7 @@ MutantStack<T, _Container>::MutantStack(const MutantStack<T, _Container> & copy)
 template<class T, class _Container>
 MutantStack<T, _Container> &MutantStack<T, _Container>::operator=(const MutantStack<T, _Container> &copy)
 {
-	this->std::stack<T>::operator=(copy);
+	this->std::stack<T, _Container>::operator=(copy);
 	return (*this);
 }
 
