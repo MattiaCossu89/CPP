@@ -8,7 +8,7 @@ template<class T, class _Container = std::deque<T> >
 class stack_iterator
 {
 	private:
-		typedef typename _Container::reverse_iterator iter;
+		typedef typename _Container::iterator iter;
 		iter it;
 	public:
 		stack_iterator();
@@ -117,13 +117,13 @@ T &stack_iterator<T, _Container>::operator*()
 template<class T, class _Container>
 typename MutantStack<T, _Container>::iterator MutantStack<T, _Container>::begin()
 {
-	return this->c.rbegin();
+	return this->c.begin();
 }
 
 template<class T, class _Container>
 typename MutantStack<T, _Container>::iterator MutantStack<T, _Container>::end()
 {
-	return this->c.rend();
+	return this->c.end();
 }
 template<class T, class _Container>
 MutantStack<T, _Container>::MutantStack() : std::stack<T, _Container>()

@@ -52,6 +52,18 @@ void	Span::addNumber(int num)
 	_size++;
 }
 
+void	Span::addNumbers(int bnum, int endnum, int step)
+{
+	if (((bnum > endnum) && (step > 1)) || step == 0)
+		throw InvalidAddingParams();
+	if ((bnum < endnum) && (step < 0))
+		throw InvalidAddingParams();
+	if (_size + (abs(endnum - bnum) / abs(step)) - 1 >= _capacity)
+		throw MaxCapacityReachedException();
+	for (int i = bnum; step > 0 ? i < endnum : i > endnum; i += step)
+		addNumber(i);
+}
+
 unsigned int Span::size() const
 {
 	return (_size);

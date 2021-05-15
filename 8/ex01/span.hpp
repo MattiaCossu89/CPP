@@ -31,11 +31,19 @@ class Span
 				return "No Span aviable";
 			}
 		};
+		class InvalidAddingParams : public std::exception
+		{
+			virtual const char * what() const throw()
+			{
+				return "Invalid Adding Params";
+			}
+		};
 		Span(unsigned int capacity);
 		Span(const Span & copy);
 		Span &operator=(const Span & copy);
 		~Span();
 		void	addNumber(int num);
+		void	addNumbers(int bnum, int endnum, int step = 1);
 		unsigned int size() const;
 		unsigned int capacity() const;
 		unsigned int shortestSpan() const;
