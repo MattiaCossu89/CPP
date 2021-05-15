@@ -14,6 +14,11 @@ int main()
 		std::cout << *it << " ";
 	std::cout << std::endl;
 	std::stack<int, std::vector<int> > s(m);
+	std::cout << "MutantStack top " << m.top() << std::endl;
+	std::cout << "Stack (copy costructor) top " << s.top() << std::endl;
+	s.pop();
+	std::cout << "MutantStack top after pop on stack copy " << m.top() << std::endl;
+	std::cout << "Stack (copy costructor) top after pop " << s.top() << std::endl;
 	std::list<int> l;
 	for (int i = 0; i < 10; i++)
 		l.push_back(i);

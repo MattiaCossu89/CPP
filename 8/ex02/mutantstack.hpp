@@ -63,6 +63,7 @@ template<class T, class _Container>
 stack_iterator<T, _Container> &stack_iterator<T, _Container>::operator=(const stack_iterator<T, _Container> &copy)
 {
 	it = copy.it;
+	return *this;
 }
 
 template<class T, class _Container>
