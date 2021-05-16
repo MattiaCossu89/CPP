@@ -80,10 +80,15 @@ unsigned int Span::shortestSpan() const
 		throw NoSpanFoundException();
 	unsigned int diff = UINT_MAX;
 	long int diff_;
-	for (unsigned int i = 0; i < _size - 1 && diff > 0; i++)
-		for (unsigned int j = i + 1; j < _size && diff > 0; j++)
-			if (labs(diff_ = _arr[i] - _arr[j]) < diff)
-				diff = labs(diff_);
+	int  *arr = new int[_size];
+	for (unsigned int i = 0; i < _size; i++)
+		arr[i] = _arr[i];
+	std::sort(arr, &arr[_size]);
+	for (unsigned int j = 0; j < _size - 1 && diff > 0; ++j)
+		if (labs(diff_ = _arr[j] - _arr[j + 1]) < diff)
+			diff = labs(diff_);
+
+	return (diff);
 	return (diff);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:03:15 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/09 15:00:40 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/16 17:28:39 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int main()
 		l.push_back(i);
 
 	std::cout << easyfind(v, 3) << std::endl;
-	std::cout << easyfind(m, 3) << std::endl;
-	std::cout << easyfind(l, 3) << std::endl;
+	std::cout << easyfind(m, 4) << std::endl;
+	std::cout << easyfind(l, 5) << std::endl;
 
 	try
 	{

@@ -6,7 +6,7 @@
 
 #include <exception>
 #include <limits>
-
+#include <algorithm>
 class Span
 {
 	private:
