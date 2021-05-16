@@ -6,7 +6,7 @@
 /*   By: mcossu <mcossu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 16:52:41 by mcossu            #+#    #+#             */
-/*   Updated: 2021/05/15 17:38:36 by mcossu           ###   ########.fr       */
+/*   Updated: 2021/05/16 16:35:25 by mcossu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ int main()
 {
 	srand(time(0));
 	Span s(100);
+	try
+	{
+		s.longestSpan();
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	for (unsigned int i = 0; i < s.capacity(); i++)
 		s.addNumber(i * 4);
 	Span s1(10000);
