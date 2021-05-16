@@ -87,8 +87,6 @@ unsigned int Span::shortestSpan() const
 	for (unsigned int j = 0; j < _size - 1 && diff > 0; ++j)
 		if (labs(diff_ = _arr[j] - _arr[j + 1]) < diff)
 			diff = labs(diff_);
-
-	return (diff);
 	return (diff);
 }
 
